@@ -4,6 +4,7 @@ module.exports.config = {
   version: "1.0.0",
   permssion: 2,
   credits: "JOY AHMED",
+  prefix: true,
   description: "Add the specified UID to the current group",
   category: "system",
   usages: ".wow",
