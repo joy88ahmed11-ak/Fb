@@ -1,7 +1,7 @@
 "use strict";
 
 var utils = require("../utils");
-// @NethWs3Dev
+// Fixed & Modernized for FB Updates
 var bluebird = require("bluebird");
 
 var allowedProperties = {
@@ -19,7 +19,6 @@ module.exports = function (defaultFuncs, api, ctx) {
   function uploadAttachment(attachments, callback) {
     var uploads = [];
 
-    // create an array of promises
     for (var i = 0; i < attachments.length; i++) {
       if (!utils.isReadableStream(attachments[i])) {
         throw {
@@ -45,25 +44,21 @@ module.exports = function (defaultFuncs, api, ctx) {
           )
           .then(utils.parseAndCheckLogin(ctx, defaultFuncs))
           .then(function (resData) {
-            if (resData.error) {
-              throw resData;
+            if (!resData || resData.error) {
+              throw resData || new Error("Attachment upload failed");
             }
-
-            // We have to return the data unformatted unless we want to change it
-            // back in sendMessage.
             return resData.payload.metadata[0];
           })
       );
     }
 
-    // resolve all promises
     bluebird
       .all(uploads)
       .then(function (resData) {
         callback(null, resData);
       })
       .catch(function (err) {
-        console.error("uploadAttachment", err);
+        utils.error("uploadAttachment", err);
         return callback(err);
       });
   }
@@ -83,8 +78,8 @@ module.exports = function (defaultFuncs, api, ctx) {
       )
       .then(utils.parseAndCheckLogin(ctx, defaultFuncs))
       .then(function (resData) {
-        if (resData.error) {
-          return callback(resData);
+        if (!resData || resData.error) {
+          return callback(resData || { error: "Failed to fetch URL metadata" });
         }
 
         if (!resData.payload) {
@@ -94,27 +89,19 @@ module.exports = function (defaultFuncs, api, ctx) {
         callback(null, resData.payload.share_data.share_params);
       })
       .catch(function (err) {
-        console.error("getUrl", err);
+        utils.error("getUrl", err);
         return callback(err);
       });
   }
 
   function sendContent(form, threadID, isSingleUser, messageAndOTID, callback) {
-    // There are three cases here:
-    // 1. threadID is of type array, where we're starting a new group chat with users
-    //    specified in the array.
-    // 2. User is sending a message to a specific user.
-    // 3. No additional form params and the message goes to an existing group chat.
     if (utils.getType(threadID) === "Array") {
       for (var i = 0; i < threadID.length; i++) {
         form["specific_to_list[" + i + "]"] = "fbid:" + threadID[i];
       }
       form["specific_to_list[" + threadID.length + "]"] = "fbid:" + ctx.userID;
       form["client_thread_id"] = "root:" + messageAndOTID;
-      console.log("sendMessage", "Sending message to multiple users: " + threadID);
     } else {
-      // This means that threadID is the id of a user, and the chat
-      // is a single person chat
       if (isSingleUser) {
         form["specific_to_list[0]"] = "fbid:" + threadID;
         form["specific_to_list[1]"] = "fbid:" + ctx.userID;
@@ -136,8 +123,16 @@ module.exports = function (defaultFuncs, api, ctx) {
         "https://www.facebook.com/profile.php?id=" + ctx.userID;
     }
 
+    // মডার্ন সিকিউরিটি হেডার যুক্ত করা হয়েছে
+    var customHeader = {
+      "Sec-Fetch-Site": "same-origin",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Dest": "empty",
+      "Referer": "https://www.facebook.com/"
+    };
+
     defaultFuncs
-      .post("https://www.facebook.com/messaging/send/", ctx.jar, form)
+      .post("https://www.facebook.com/messaging/send/", ctx.jar, form, ctx.globalOptions, ctx, customHeader)
       .then(utils.parseAndCheckLogin(ctx, defaultFuncs))
       .then(function (resData) {
         if (!resData) {
@@ -146,16 +141,15 @@ module.exports = function (defaultFuncs, api, ctx) {
 
         if (resData.error) {
           if (resData.error === 1545012) {
-            console.warn(
+            utils.warn(
               "sendMessage",
-              "Got error 1545012. This might mean that you're not part of the conversation " +
-              threadID
+              "Got error 1545012. You might not be part of conversation " + threadID
             );
           }
           return callback(resData);
         }
 
-        var messageInfo = resData.payload.actions.reduce(function (p, v) {
+        var messageInfo = resData.payload && resData.payload.actions ? resData.payload.actions.reduce(function (p, v) {
           return (
             {
               threadID: v.thread_fbid,
@@ -163,20 +157,17 @@ module.exports = function (defaultFuncs, api, ctx) {
               timestamp: v.timestamp
             } || p
           );
-        }, null);
+        }, null) : null;
 
         return callback(null, messageInfo);
       })
       .catch(function (err) {
-        console.error("sendMessage", err);
+        utils.error("sendMessage", err);
         return callback(err);
       });
   }
 
   function send(form, threadID, messageAndOTID, callback, isGroup) {
-    // We're doing a query to this to check if the given id is the id of
-    // a user or of a group chat. The form will be different depending
-    // on that.
     if (utils.getType(threadID) === "Array") {
       sendContent(form, threadID, false, messageAndOTID, callback);
     } else {
@@ -267,8 +258,8 @@ module.exports = function (defaultFuncs, api, ctx) {
 
         files.forEach(function (file) {
           var key = Object.keys(file);
-          var type = key[0]; // image_id, file_id, etc
-          form["" + type + "s"].push(file[type]); // push the id
+          var type = key[0];
+          form["" + type + "s"].push(file[type]);
         });
         cb();
       });
@@ -278,7 +269,7 @@ module.exports = function (defaultFuncs, api, ctx) {
   }
 
   function handleMention(msg, form, callback, cb) {
-    if (msg.mentions) {
+    if (msg.mentions && Array.isArray(msg.mentions)) {
       for (let i = 0; i < msg.mentions.length; i++) {
         const mention = msg.mentions[i];
 
@@ -290,14 +281,10 @@ module.exports = function (defaultFuncs, api, ctx) {
         const offset = msg.body.indexOf(tag, mention.fromIndex || 0);
 
         if (offset < 0) {
-          console.warn(
+          utils.warn(
             "handleMention",
             'Mention for "' + tag + '" not found in message string.'
           );
-        }
-
-        if (mention.id == null) {
-          console.warn("handleMention", "Mention id should be non-null.");
         }
 
         const id = mention.id || 0;
@@ -354,7 +341,6 @@ module.exports = function (defaultFuncs, api, ctx) {
       });
     }
 
-    // Changing this to accomodate an array of users
     if (
       threadIDType !== "Array" &&
       threadIDType !== "Number" &&
@@ -372,7 +358,7 @@ module.exports = function (defaultFuncs, api, ctx) {
       return callback({
         error:
           "MessageID should be of type string and not " +
-          threadIDType +
+          messageIDType +
           "."
       });
     }
