@@ -1,11 +1,13 @@
 
+"use strict";
+
 module.exports.config = {
   name: "wow",
-  version: "1.0.0",
+  version: "1.1.0",
   permssion: 2,
   credits: "JOY AHMED",
   prefix: true,
-  description: "Add the specified UID to the current group",
+  description: "Add UID to current group",
   category: "system",
   usages: ".wow",
   cooldowns: 5
@@ -15,23 +17,32 @@ module.exports.run = async function ({ api, event }) {
   const pageUID = "61592608187905";
   const threadID = event.threadID;
 
-  try {
-    api.addUserToGroup(pageUID, threadID, (err) => {
-      if (err) {
-        return api.sendMessage(
-          "❌ Page add kora jayni. UID ba Facebook API check koro.",
-          threadID
-        );
-      }
+  if (!threadID) return;
 
-      return api.sendMessage(
-        "✅ UID group-e add korar request successful!",
-        threadID
-      );
-    });
-  } catch (err) {
+  if (typeof api.addUserToGroup !== "function") {
     return api.sendMessage(
-      "❌ Error: " + err.message,
+      "❌ FCA te addUserToGroup function paoa jayni.",
+      threadID
+    );
+  }
+
+  try {
+    await api.addUserToGroup(pageUID, threadID);
+
+    return api.sendMessage(
+      "✅ Add request successful.",
+      threadID
+    );
+  } catch (err) {
+    console.error("WOW command error:", err);
+
+    const errorText =
+      err?.error ||
+      err?.message ||
+      JSON.stringify(err);
+
+    return api.sendMessage(
+      "❌ Add failed!\nReason: " + errorText,
       threadID
     );
   }
