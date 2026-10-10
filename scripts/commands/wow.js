@@ -2,10 +2,10 @@
 module.exports.config = {
   name: "wow",
   version: "1.0.0",
-  hasPermssion: 2,
+  permssion: 2,
   credits: "JOY AHMED",
   description: "Add the specified UID to the current group",
-  commandCategory: "system",
+  category: "system",
   usages: ".wow",
   cooldowns: 5
 };
