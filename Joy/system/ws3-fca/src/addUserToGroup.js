@@ -1,7 +1,7 @@
 "use strict";
 
 const utils = require("../utils");
-// @NethWs3Dev
+// Fixed & Optimized by Joy
 
 module.exports = function (defaultFuncs, api, ctx) {
   return function addUserToGroup(userID, threadID, callback) {
@@ -17,9 +17,7 @@ module.exports = function (defaultFuncs, api, ctx) {
       (utils.getType(threadID) === "Function" ||
         utils.getType(threadID) === "AsyncFunction")
     ) {
-      throw new utils.CustomError({
-        error: "please pass a threadID as a second argument.",
-      });
+      throw new Error("please pass a threadID as a second argument.");
     }
 
     if (!callback) {
@@ -35,12 +33,11 @@ module.exports = function (defaultFuncs, api, ctx) {
       utils.getType(threadID) !== "Number" &&
       utils.getType(threadID) !== "String"
     ) {
-      throw new utils.CustomError({
-        error:
-          "ThreadID should be of type Number or String and not " +
-          utils.getType(threadID) +
-          ".",
-      });
+      throw new Error(
+        "ThreadID should be of type Number or String and not " +
+        utils.getType(threadID) +
+        "."
+      );
     }
 
     if (utils.getType(userID) !== "Array") {
@@ -80,33 +77,40 @@ module.exports = function (defaultFuncs, api, ctx) {
         utils.getType(userID[i]) !== "Number" &&
         utils.getType(userID[i]) !== "String"
       ) {
-        throw new utils.CustomError({
-          error:
-            "Elements of userID should be of type Number or String and not " +
-            utils.getType(userID[i]) +
-            ".",
-        });
+        throw new Error(
+          "Elements of userID should be of type Number or String and not " +
+          utils.getType(userID[i]) +
+          "."
+        );
       }
 
       form["log_message_data[added_participants][" + i + "]"] =
         "fbid:" + userID[i];
     }
 
+    // ফেসবুকের অ্যান্টি-স্প্যাম সিকিউরিটি বাইপাস করতে মডার্ন ব্রাউজার হেডার যুক্ত করা হয়েছে
+    const customHeader = {
+      "Sec-Fetch-Site": "same-origin",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Dest": "empty",
+      "Referer": "https://www.facebook.com/"
+    };
+
     defaultFuncs
-      .post("https://www.facebook.com/messaging/send/", ctx.jar, form)
+      .post("https://www.facebook.com/messaging/send/", ctx.jar, form, ctx.globalOptions, ctx, customHeader)
       .then(utils.parseAndCheckLogin(ctx, defaultFuncs))
       .then(function (resData) {
         if (!resData) {
-          throw new utils.CustomError({ error: "Add to group failed." });
+          throw new Error("Add to group failed.");
         }
         if (resData.error) {
-          throw new utils.CustomError(resData);
+          throw new Error(JSON.stringify(resData));
         }
 
         return callback();
       })
       .catch(function (err) {
-        console.error("addUserToGroup", err);
+        utils.error("addUserToGroup", err);
         return callback(err);
       });
 
