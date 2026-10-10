@@ -1,1 +1,459 @@
-const _0xadf274=_0x4f38;(function(_0xc2173a,_0x4de80f){const _0x44df76=_0x4f38,_0x17349a=_0xc2173a();while(!![]){try{const _0x117669=-parseInt(_0x44df76(0x296))/(0x17e*-0x13+0x263a+0x9df*-0x1)+-parseInt(_0x44df76(0x1a2))/(-0x1*0x691+0x20f9+-0x1a66)+parseInt(_0x44df76(0x276))/(-0x22b8+0x5a8+0x1d13*0x1)+parseInt(_0x44df76(0x23e))/(-0x4ee*0x3+-0x1ce5+0x2bb3)+parseInt(_0x44df76(0x19d))/(0x1a25+-0x1d86+0x1d*0x1e)*(parseInt(_0x44df76(0x156))/(0x3*0x7f7+0x1e9+-0x19c8))+parseInt(_0x44df76(0x280))/(0x2456*-0x1+-0x1961+0x3dbe)+-parseInt(_0x44df76(0x1e3))/(0x35*0x49+-0x22f1+-0x13dc*-0x1)*(parseInt(_0x44df76(0x1a5))/(0x13a*0x1a+-0x4*-0x83d+-0x40cf));if(_0x117669===_0x4de80f)break;else _0x17349a['push'](_0x17349a['shift']());}catch(_0x4ae53c){_0x17349a['push'](_0x17349a['shift']());}}}(_0x7255,-0x156fa+0x49*-0x180f+0xbe684*0x1));const checkVersion=require(_0xadf274(0x271)+_0xadf274(0x219));((async()=>{const _0x581106=_0xadf274,_0x4be809={'yWSko':function(_0x4b8de4){return _0x4b8de4();},'PhWfy':_0x581106(0x225)+_0x581106(0x15c)+_0x581106(0x1b7)+_0x581106(0x1a3)+_0x581106(0x1d9)+_0x581106(0x1a9),'ozzBQ':_0x581106(0x19f)+_0x581106(0x248)+_0x581106(0x283)+_0x581106(0x2c5)};try{const _0x46a821=await _0x4be809[_0x581106(0x17e)](checkVersion);!_0x46a821&&(console[_0x581106(0x1c0)](_0x4be809[_0x581106(0x1f8)]),process[_0x581106(0x137)](0xe4c+-0x125c+-0x14*-0x34));}catch(_0x367b56){console[_0x581106(0x1c0)](_0x4be809[_0x581106(0x2c9)],_0x367b56[_0x581106(0x195)]),process[_0x581106(0x137)](-0x23d+0x1*0x67+-0x1d6*-0x1);}})());const {readdirSync,readFileSync,writeFileSync}=require(_0xadf274(0x162)),{join,resolve}=require(_0xadf274(0x20f)),{execSync}=require(_0xadf274(0x2bc)+_0xadf274(0x278)),axios=require(_0xadf274(0x1d2)),config=require(_0xadf274(0x23b)+_0xadf274(0x147)),hshs=require(_0xadf274(0x220)+_0xadf274(0x1ca)+'n'),chalk=require(_0xadf274(0x20d)),listPackage=JSON[_0xadf274(0x213)](readFileSync(_0xadf274(0x1e9)+_0xadf274(0x1c3)))[_0xadf274(0x1ed)+'es'],packages=JSON[_0xadf274(0x213)](readFileSync(_0xadf274(0x1e9)+_0xadf274(0x1c3))),fs=require('fs'),login=require(_0xadf274(0x27a)+_0xadf274(0x1b2)),moment=require(_0xadf274(0x1c2)+_0xadf274(0x21f)),logger=require(_0xadf274(0x150)),gradient=require(_0xadf274(0x141)+_0xadf274(0x152)),process=require(_0xadf274(0x15b)),listbuiltinModules=require(_0xadf274(0x288))[_0xadf274(0x18d)+_0xadf274(0x15f)],cnslEvent=require(_0xadf274(0x226)+_0xadf274(0x1ea)+_0xadf274(0x146)),fonts=require(_0xadf274(0x251));global[_0xadf274(0x2a0)]=fonts,global[_0xadf274(0x291)]=_0xadf274(0x279)+_0xadf274(0x191),global[_0xadf274(0x16c)]=new Object({'commands':new Map(),'events':new Map(),'cooldowns':new Map(),'eventRegistered':new Array(),'handleSchedule':new Array(),'handleReaction':new Array(),'handleReply':new Array(),'mainPath':process[_0xadf274(0x1b4)](),'configPath':new String(),'apiryukoPath':new String(),'ryukoPath':new String(),'premiumListsPath':new String(),'approvedListsPath':new String(),'getTime':function(_0x1d12d2){const _0x1e6565=_0xadf274,_0x594d6e={'FCeoH':_0x1e6565(0x22e),'bscro':_0x1e6565(0x25d),'DQThx':_0x1e6565(0x232),'gGNCK':_0x1e6565(0x185),'QomlP':_0x1e6565(0x157),'TEKfj':_0x1e6565(0x15a),'kpDxH':_0x1e6565(0x179),'gkRjZ':_0x1e6565(0x28e),'rsTgl':_0x1e6565(0x255),'ZHoDb':_0x1e6565(0x281),'aMSuP':_0x1e6565(0x268),'qANjs':_0x1e6565(0x272),'vZsjs':_0x1e6565(0x148),'qERqv':_0x1e6565(0x221)+_0x1e6565(0x21c)};switch(_0x1d12d2){case _0x594d6e[_0x1e6565(0x194)]:return''+moment['tz'](_0x594d6e[_0x1e6565(0x1d8)])[_0x1e6565(0x269)]('ss');case _0x594d6e[_0x1e6565(0x245)]:return''+moment['tz'](_0x594d6e[_0x1e6565(0x1d8)])[_0x1e6565(0x269)]('mm');case _0x594d6e[_0x1e6565(0x2b1)]:return''+moment['tz'](_0x594d6e[_0x1e6565(0x1d8)])[_0x1e6565(0x269)]('HH');case _0x594d6e[_0x1e6565(0x2a1)]:return''+moment['tz'](_0x594d6e[_0x1e6565(0x1d8)])[_0x1e6565(0x269)]('DD');case _0x594d6e[_0x1e6565(0x2b0)]:return''+moment['tz'](_0x594d6e[_0x1e6565(0x1d8)])[_0x1e6565(0x269)]('MM');case _0x594d6e[_0x1e6565(0x238)]:return''+moment['tz'](_0x594d6e[_0x1e6565(0x1d8)])[_0x1e6565(0x269)](_0x594d6e[_0x1e6565(0x189)]);case _0x594d6e[_0x1e6565(0x149)]:return''+moment['tz'](_0x594d6e[_0x1e6565(0x1d8)])[_0x1e6565(0x269)](_0x594d6e[_0x1e6565(0x23a)]);case _0x594d6e[_0x1e6565(0x28b)]:return''+moment['tz'](_0x594d6e[_0x1e6565(0x1d8)])[_0x1e6565(0x269)](_0x594d6e[_0x1e6565(0x28d)]);case _0x594d6e[_0x1e6565(0x2b4)]:return''+moment['tz'](_0x594d6e[_0x1e6565(0x1d8)])[_0x1e6565(0x269)](_0x594d6e[_0x1e6565(0x29c)]);}},'timeStart':Date[_0xadf274(0x21a)]()}),global[_0xadf274(0x274)]=new Object({'threadInfo':new Map(),'threadData':new Map(),'userName':new Map(),'userBanned':new Map(),'threadBanned':new Map(),'commandBanned':new Map(),'threadAllowNSFW':new Array(),'allUserID':new Array(),'allCurrenciesID':new Array(),'allThreadID':new Array()}),global[_0xadf274(0x18e)]=require(_0xadf274(0x258)),global[_0xadf274(0x13b)]=require(_0xadf274(0x150)),global[_0xadf274(0x204)]=new Object(),global[_0xadf274(0x1f7)]=new Object(),global[_0xadf274(0x2bb)]=new Object(),global[_0xadf274(0x1d4)]=new Object(),global[_0xadf274(0x155)]=new Object(),global[_0xadf274(0x1ba)]=new Object(),global[_0xadf274(0x22a)+'le']=new Object(),global[_0xadf274(0x27b)]=new Array(),global[_0xadf274(0x21b)]=new Object(),global[_0xadf274(0x1fe)]=new Object();const cheerful=gradient[_0xadf274(0x1dd)],crayon=gradient(_0xadf274(0x252),_0xadf274(0x1db),_0xadf274(0x2bf)),sky=gradient(_0xadf274(0x145),_0xadf274(0x133),_0xadf274(0x263)),BLUE=_0xadf274(0x19b),errorMessages=[];errorMessages[_0xadf274(0x266)]>0xc20+0x16f7+-0x2317&&(console[_0xadf274(0x250)](_0xadf274(0x18f)+_0xadf274(0x259)+_0xadf274(0x20e)),errorMessages[_0xadf274(0x22b)](({command:_0xd72afa,error:_0x3769d3})=>{const _0x1a5d54=_0xadf274;console[_0x1a5d54(0x250)](_0xd72afa+':\x20'+_0x3769d3);}));var apiryukoValue;try{global[_0xadf274(0x16c)][_0xadf274(0x229)+'th']=join(global[_0xadf274(0x16c)][_0xadf274(0x285)],_0xadf274(0x226)+_0xadf274(0x208)),apiryukoValue=require(global[_0xadf274(0x16c)][_0xadf274(0x229)+'th']);}catch(_0x4d8e00){return;}try{for(const apiKeys in apiryukoValue)global[_0xadf274(0x1d4)][apiKeys]=apiryukoValue[apiKeys];}catch(_0x5bfd76){return;}var ryukoValue;try{global[_0xadf274(0x16c)][_0xadf274(0x265)]=join(global[_0xadf274(0x16c)][_0xadf274(0x285)],_0xadf274(0x226)+_0xadf274(0x198)),ryukoValue=require(global[_0xadf274(0x16c)][_0xadf274(0x265)]);}catch(_0x12e946){return;}try{for(const Keys in ryukoValue)global[_0xadf274(0x2bb)][Keys]=ryukoValue[Keys];}catch(_0x4f39dc){return;}var configValue;try{global[_0xadf274(0x16c)][_0xadf274(0x167)]=join(global[_0xadf274(0x16c)][_0xadf274(0x285)],_0xadf274(0x23b)+_0xadf274(0x147)),configValue=require(global[_0xadf274(0x16c)][_0xadf274(0x167)]),logger[_0xadf274(0x2cc)](_0xadf274(0x17b)+chalk[_0xadf274(0x22d)](_0xadf274(0x27f))+_0xadf274(0x1c5));}catch(_0xb954b7){return logger[_0xadf274(0x2cc)](_0xadf274(0x207)+chalk[_0xadf274(0x22d)](_0xadf274(0x27f))+_0xadf274(0x1c5),_0xadf274(0x1c0));}try{for(const key in configValue)global[_0xadf274(0x1f7)][key]=configValue[key];logger[_0xadf274(0x2cc)](_0xadf274(0x26b)+chalk[_0xadf274(0x22d)](_0xadf274(0x27f))+_0xadf274(0x1c5));}catch(_0x58fe99){return logger[_0xadf274(0x2cc)](_0xadf274(0x1ae)+_0xadf274(0x2c2)+chalk[_0xadf274(0x22d)](_0xadf274(0x27f))+_0xadf274(0x1c5),_0xadf274(0x1c0));}var approvedListsValue;try{global[_0xadf274(0x16c)][_0xadf274(0x16b)+_0xadf274(0x1f0)]=join(global[_0xadf274(0x16c)][_0xadf274(0x285)],_0xadf274(0x1e6)+_0xadf274(0x175)+_0xadf274(0x2ab)),approvedListsValue=require(global[_0xadf274(0x16c)][_0xadf274(0x16b)+_0xadf274(0x1f0)]),config[_0xadf274(0x2a9)]?logger[_0xadf274(0x2cc)](_0xadf274(0x17b)+chalk[_0xadf274(0x22d)](_0xadf274(0x2d1)+_0xadf274(0x1b9))):logger(chalk[_0xadf274(0x22d)](_0xadf274(0x2a9))+(_0xadf274(0x27c)+_0xadf274(0x1a8)+'f'),_0xadf274(0x165));}catch(_0x34ec71){return logger(_0xadf274(0x17d)+_0xadf274(0x1d5)+_0xadf274(0x24b),_0xadf274(0x1c0));}try{for(const approvedListsKeys in approvedListsValue)global[_0xadf274(0x1ba)][approvedListsKeys]=approvedListsValue[approvedListsKeys];config[_0xadf274(0x2a9)]&&logger[_0xadf274(0x2cc)](_0xadf274(0x26b)+chalk[_0xadf274(0x22d)](_0xadf274(0x2d1)+_0xadf274(0x1b9)));}catch(_0x2693cb){return logger(_0xadf274(0x1ae)+_0xadf274(0x210)+_0xadf274(0x138)+_0xadf274(0x1b9),_0xadf274(0x1c0));}var premiumListsValue;try{global[_0xadf274(0x16c)][_0xadf274(0x216)+_0xadf274(0x26a)]=join(global[_0xadf274(0x16c)][_0xadf274(0x285)],_0xadf274(0x1e6)+_0xadf274(0x29e)+_0xadf274(0x273)),premiumListsValue=require(global[_0xadf274(0x16c)][_0xadf274(0x216)+_0xadf274(0x26a)]),config[_0xadf274(0x155)]?logger[_0xadf274(0x2cc)](_0xadf274(0x17b)+chalk[_0xadf274(0x22d)](_0xadf274(0x227)+_0xadf274(0x256))):logger(chalk[_0xadf274(0x22d)](_0xadf274(0x155))+(_0xadf274(0x27c)+_0xadf274(0x1a8)+'f'),_0xadf274(0x165));}catch(_0x45dcef){return logger(_0xadf274(0x17d)+_0xadf274(0x1ff)+_0xadf274(0x1b9),_0xadf274(0x1c0));}try{for(const premiumLists in premiumListsValue)global[_0xadf274(0x155)][premiumLists]=premiumListsValue[premiumLists];config[_0xadf274(0x155)]&&logger[_0xadf274(0x2cc)](_0xadf274(0x26b)+chalk[_0xadf274(0x22d)](_0xadf274(0x227)+_0xadf274(0x256)));}catch(_0xd27e1d){return logger(_0xadf274(0x1ae)+_0xadf274(0x267)+_0xadf274(0x1bc),_0xadf274(0x1c0));}const {Sequelize,sequelize}=require(_0xadf274(0x27a)+_0xadf274(0x24a)+_0xadf274(0x2ba));for(const property in listPackage){try{global[_0xadf274(0x204)][property]=require(property);}catch(_0x53c74c){}}const langFile=readFileSync(__dirname+(_0xadf274(0x24c)+'/')+(global[_0xadf274(0x1f7)][_0xadf274(0x21b)]||'en')+_0xadf274(0x222),{'encoding':_0xadf274(0x292)})[_0xadf274(0x170)](/\r?\n|\r/),langData=langFile[_0xadf274(0x27d)](_0x3e23ca=>_0x3e23ca[_0xadf274(0x188)]('#')!=-0x7b1*-0x1+0xfa2+-0x1753&&_0x3e23ca!='');for(const item of langData){const getSeparator=item[_0xadf274(0x188)]('='),itemKey=item[_0xadf274(0x1c7)](-0x138*0x10+0x91*-0x1a+0x111d*0x2,getSeparator),itemValue=item[_0xadf274(0x1c7)](getSeparator+(0x2e7*-0xd+0x6f*-0x34+0x3*0x1418),item[_0xadf274(0x266)]),head=itemKey[_0xadf274(0x1c7)](0xe*-0x277+-0x2006+0x4288,itemKey[_0xadf274(0x188)]('.')),key=itemKey[_0xadf274(0x277)](head+'.',''),value=itemValue[_0xadf274(0x277)](/\\n/gi,'\x0a');if(typeof global[_0xadf274(0x21b)][head]==_0xadf274(0x2d0))global[_0xadf274(0x21b)][head]=new Object();global[_0xadf274(0x21b)][head][key]=value;}function _0x4f38(_0x4ba7da,_0x1899c8){_0x4ba7da=_0x4ba7da-(-0x22d4+-0x1*-0x4da+-0x1f2d*-0x1);const _0x775304=_0x7255();let _0x58416b=_0x775304[_0x4ba7da];return _0x58416b;}function _0x7255(){const _0x4f657b=['endsWith','anged\x20at\x20','warn','xxJLO','configPath','vkxAC','detected\x20:','api','approvedLi','client','ccurred\x20wh','push','HyXbk','split','EdREF','command\x20-','Sequelize','\x20already\x20d','/approvedl','uAmPm','--no-save\x20','xDlDQ','year','handleList','deploying\x20','t\x20prefix\x20i','can\x27t\x20read','yWSko','at\x20','BOTNAME','logger','LrEYf','t\x20:\x20','GZjjd','hours','e\x20module.','clear','indexOf','gkRjZ','version','MmNNG','\x20module\x20is','builtinMod','utils','commands\x20w','#FFFF00','\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x7f','VZWxO','OPfJx','FCeoH','message','rbcgl','LxTdq','/Joy.json','QJWVM','format.\x20','#3467eb','is\x20not\x20in\x20','8885ckISzd','ents','\x7f\x20Version\x20','appstate\x20s','eventRegis','502338EhJNYa','reachable,','disabledcm','36rEJMvr','JhbsY','OWNER','\x20turned\x20of','ot.','nd\x20key\x20tex','nJrII','CwqQB','login','can\x27t\x20depl','FDSMO','e\x20correct\x20','QqDER','ws3-fca','Wnhsj','cwd','0|1|3|4|2','presence','itHub\x20not\x20','LbFPs','atabase','approved','SmzQj','\x20database','l\x20--no-pac','../../node','handleEven','error','sGxak','moment-tim','age.json','author','\x20file','strings','slice','eployed.','getAppStat','-agent.jso','huPXl','bMGAw','WbpWd','Ttoyu','set','ime\x20:\x20','qdTqA','axios','command','apiryuko','\x20approved\x20','odel.js','commands','bscro','\x20exiting\x20b','prefix','lime','load\x20the\x20o','fruit','mKVqZ','unable\x20to\x20','\x20-\x20not\x20fou','cmdLoader','successful','1122608qGUMUq','gmSkc','onLoad','../botdata','\x20does\x20not\x20','Kjvsg','../../pack','/console.j','setOptions','fCxQx','dependenci','LkKOW','and\x20','stsPath','kbMfb','1000004948','th\x20error\x20:','Yahte','encryptSta','ZaEha','config','PhWfy','package.js','listen.js','ame\x20was\x20ch','TiCCy','aXxTE','account','\x20premium\x20d','t\x20format\x20o','\x20not\x20in\x20th','wrTHe','includes','nodemodule','deployed\x20t','BOT\x20DATA','cant\x20read\x20','/api.json','sZNsy','\x20events','authentica','Sxifs','chalk','\x20:\x20','path','oy\x20approve','KBvhO','oLMGh','parse','getText','ession','premiumLis','XOVOC','err','te.js','now','language','D/MM/YYYY','t\x20name\x20in\x20','evntStarte','ezone','../../user','HH:mm:ss\x20D','.lang','join','\x20commands\x20','\x7f\x20Update\x20f','../configs','premium\x20da','DhIso','apiryukoPa','configModu','forEach','\x20category\x20','blueBright','seconds','Joy.json','.js','01296','minutes','YJJVs','Krdcn','ljIwZ','inherit','decryptSta','kpDxH','#ff7100','ZHoDb','../../Joy.','BIHnd','gGTbD','1158964YnhYcx','operty.','nLoad\x20func','listenMqtt','some','EYIEC','qsqrP','DQThx','typ','category','check\x20fail','utf8','database/i','database','/languages','pts/events','../../scri','YkQMC','log','./fonts.js','yellow','read_recei','\x20OWNER\x20was','fullHour','tabase','stringify','./Joyd.js','ith\x20errors','PREFIX','vGysV','readFileSy','Asia/Dhaka','red','GysER','premium\x22\x20p','LQhxe','models','#3474eb','xabPF','ryukoPath','length','oy\x20premium','fullYear','format','tsPath','deployed\x20','custom','ing\x20the\x20co','an\x20error\x20o','MJyqF','example','../../upda','DD/MM/YYYY','sts.json','data','ile\x20deploy','1219302BSErNF','replace','ess','\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x7f','../system/','moduleData','\x20system\x20is','filter','sequelize','Joy','2653336AVqcoK','HH:mm:ss','hasOwnProp','ed,\x20exitin','XnyHR','mainPath','cache','keys','module','appState','deploy\x20','aMSuP','jEpou','qANjs','YYYY','JTDCB','eeBzV','line','utf-8','the\x20correc','failed\x20to\x20','kFrqX','235268CBMYEg','fBGOC','roperty.','tate.json','ly\x20deploye','s\x20changed\x20','qERqv','pts/comman','/premiumli','guage\x20:\x20','fonts','QomlP','l\x20--save\x20','install\x20pa','type','lSZQb','hdBgp','okUST','../../Joys','approval','entries','ists.json','nJREd','loginoptio','events','ckage\x20','TEKfj','gGNCK','please\x20ent','cmdStarter','vZsjs','timeStart','nd\x20key\x20lan','DfGHb','colors','hex','ndex.js','ryuko','child_proc','size','\x20project\x20n','green','tered','database/m','oy\x20','command\x20-\x20','envConfig','g\x20bot.','r\x20empty','name','mmand\x20:\x20','ozzBQ','\x20changed\x20a','npm\x20instal','loader','PEzfj','toFixed','blue','undefined','approved\x20d','#3455eb','have\x20the\x20\x22','JOY','VhYMX','exit','d\x20groups\x20d','QwjDk','prefix\x22\x20pr','loading','\x20author\x20wa','LqUqn','kage-lock\x20','aFDRV','DEPLOYING\x20','gradient-s','erty','event','\x20failed\x20wi','#3446eb','son','json','fullTime','rsTgl','vrtSu','bMocu','#ff0000','encryptSt','ynUwM','tion\x20of\x20th','./Joyc.js','kwgGS','tring','er\x20your\x20bo','disabledev','premium','726RBADzx','date','map','\x20system','month','process','ailed\x20or\x20G','yiCpl','Joystate','ules','_modules','has','fs-extra'];_0x7255=function(){return _0x4f657b;};return _0x7255();}global[_0xadf274(0x214)]=function(..._0x2cbbad){const _0x40c83b=_0xadf274,_0x2649a8={'bMocu':function(_0x14e412,_0x49ec05){return _0x14e412===_0x49ec05;},'wrTHe':_0x40c83b(0x2d0),'mKVqZ':function(_0x39a3b5,_0x2465e6){return _0x39a3b5-_0x2465e6;},'OPfJx':function(_0x4c7348,_0xa59deb){return _0x4c7348>_0xa59deb;},'YkQMC':function(_0x369bd9,_0x237075,_0x420977){return _0x369bd9(_0x237075,_0x420977);},'QwjDk':function(_0x257846,_0x10998a){return _0x257846+_0x10998a;}},_0x32b2c9=global[_0x40c83b(0x21b)];if(!_0x32b2c9[_0x40c83b(0x282)+_0x40c83b(0x142)](_0x2cbbad[-0x6*-0x16e+0x7b*0x1f+-0x1779]))throw new Error(__filename+(_0x40c83b(0x1e0)+_0x40c83b(0x2b6)+_0x40c83b(0x29f))+_0x2cbbad[-0x2656*-0x1+-0x28a+-0x23cc]);var _0xb1b98a=_0x32b2c9[_0x2cbbad[0x124*0x7+0xd4a+-0x1546]][_0x2cbbad[-0x6d2+-0x8c5*0x2+0x185d]];if(_0x2649a8[_0x40c83b(0x14b)](typeof _0xb1b98a,_0x2649a8[_0x40c83b(0x202)]))throw new Error(__filename+(_0x40c83b(0x1e0)+_0x40c83b(0x1aa)+_0x40c83b(0x183))+_0x2cbbad[0x1d4d*-0x1+-0x14e9*-0x1+0x865]);for(var _0x5f1dd9=_0x2649a8[_0x40c83b(0x1de)](_0x2cbbad[_0x40c83b(0x266)],-0x76f+0x12ef+-0xb7f);_0x2649a8[_0x40c83b(0x193)](_0x5f1dd9,-0x1706+-0x206a+-0x6ee*-0x8);_0x5f1dd9--){const _0x1ba135=_0x2649a8[_0x40c83b(0x24f)](RegExp,'%'+_0x5f1dd9,'g');_0xb1b98a=_0xb1b98a[_0x40c83b(0x277)](_0x1ba135,_0x2cbbad[_0x2649a8[_0x40c83b(0x139)](_0x5f1dd9,-0x1486+-0x2b*-0xad+-0x138*0x7)]);}return _0xb1b98a;};try{const lMYOMv=_0xadf274(0x1b5)[_0xadf274(0x170)]('|');let MVREZq=0x1bc7+-0xed1+-0x229*0x6;while(!![]){switch(lMYOMv[MVREZq++]){case'0':!global[_0xadf274(0x1f7)][_0xadf274(0x180)]&&(logger[_0xadf274(0x1c0)](_0xadf274(0x2b2)+_0xadf274(0x153)+_0xadf274(0x21d)+chalk[_0xadf274(0x22d)](_0xadf274(0x22f))+_0xadf274(0x1c5)),process[_0xadf274(0x137)](0x3*-0xe+-0x259e+0x25c8));continue;case'1':!global[_0xadf274(0x1f7)][_0xadf274(0x25a)]&&logger[_0xadf274(0x1c0)](_0xadf274(0x2b2)+_0xadf274(0x153)+_0xadf274(0x17c)+'n\x20'+chalk[_0xadf274(0x22d)](_0xadf274(0x22f))+_0xadf274(0x1c5));continue;case'2':packages[_0xadf274(0x2c7)]!=_0xadf274(0x135)&&(logger[_0xadf274(0x1c0)](_0xadf274(0x169)+_0xadf274(0x2be)+_0xadf274(0x1fb)+_0xadf274(0x164)+chalk[_0xadf274(0x22d)](_0xadf274(0x1f9)+'on')),process[_0xadf274(0x137)](-0x9*-0x42d+-0xe7b+0x2*-0xb8d));continue;case'3':global[_0xadf274(0x1f7)][_0xadf274(0x1a7)]!=_0xadf274(0x1f2)+_0xadf274(0x231)&&(logger[_0xadf274(0x1c0)](_0xadf274(0x169)+_0xadf274(0x254)+_0xadf274(0x2ca)+'t\x20'+chalk[_0xadf274(0x22d)](_0xadf274(0x22f))),process[_0xadf274(0x137)](-0x728+-0x1eac+0x25d4));continue;case'4':packages[_0xadf274(0x1c4)]!=_0xadf274(0x135)&&(logger[_0xadf274(0x1c0)](_0xadf274(0x169)+_0xadf274(0x13c)+_0xadf274(0x29b)+_0xadf274(0x17f)+chalk[_0xadf274(0x22d)](_0xadf274(0x1f9)+'on')),process[_0xadf274(0x137)](-0x1*-0xb0e+0xc85+-0x4b7*0x5));continue;}break;}}catch(_0x3c5de1){return;}try{var appStateFile=resolve(join(global[_0xadf274(0x16c)][_0xadf274(0x285)],_0xadf274(0x2a8)+_0xadf274(0x299))),appState=(process.env.REPL_OWNER||process.env.PROCESSOR_IDENTIFIER)&&fs[_0xadf274(0x25c)+'nc'](appStateFile,_0xadf274(0x249))[0x1f75+-0x23fe+0x489]!='['&&ryuko[_0xadf274(0x14d)]?JSON[_0xadf274(0x213)](global[_0xadf274(0x18e)][_0xadf274(0x237)+'te'](fs[_0xadf274(0x25c)+'nc'](appStateFile,_0xadf274(0x249)),process.env.REPL_OWNER||process.env.PROCESSOR_IDENTIFIER)):require(appStateFile);logger[_0xadf274(0x2cc)](_0xadf274(0x26b)+chalk[_0xadf274(0x22d)](_0xadf274(0x15e))+_0xadf274(0x1c5));}catch(_0x449081){return logger[_0xadf274(0x1c0)](_0xadf274(0x17d)+'\x20'+chalk[_0xadf274(0x22d)](_0xadf274(0x1a0)+_0xadf274(0x215))+_0xadf274(0x1c5));}function onBot({models:_0x14dfb0}){const _0x970d53=_0xadf274,_0x433254={'XnyHR':function(_0x4107a0,_0x90a8ef){return _0x4107a0(_0x90a8ef);},'xxJLO':function(_0x13a440,_0x12e257){return _0x13a440(_0x12e257);},'DfGHb':_0x970d53(0x155),'PEzfj':function(_0x207444,_0x473053){return _0x207444+_0x473053;},'eeBzV':_0x970d53(0x14c),'ZaEha':_0x970d53(0x1da),'kwgGS':function(_0x16ce0e,_0x5369ac){return _0x16ce0e+_0x5369ac;},'vkxAC':_0x970d53(0x190),'sGxak':_0x970d53(0x226)+_0x970d53(0x198),'Kjvsg':function(_0x14814b,_0x4cab3f,_0xf0da48,_0x2b0add){return _0x14814b(_0x4cab3f,_0xf0da48,_0x2b0add);},'QJWVM':_0x970d53(0x292),'QqDER':_0x970d53(0x1df)+_0x970d53(0x1dc)+_0x970d53(0x240)+_0x970d53(0x14f)+_0x970d53(0x186),'XOVOC':_0x970d53(0x1c0),'LrEYf':_0x970d53(0x26e)+_0x970d53(0x16d)+_0x970d53(0x275)+_0x970d53(0x26d)+_0x970d53(0x2c8),'bMGAw':_0x970d53(0x239),'EdREF':_0x970d53(0x1d3),'rbcgl':function(_0x22b06c,_0x497188,_0x2d396f){return _0x22b06c(_0x497188,_0x2d396f);},'FDSMO':_0x970d53(0x236),'fCxQx':function(_0x52ce95,_0x1d8433){return _0x52ce95(_0x1d8433);},'DhIso':_0x970d53(0x1be)+_0x970d53(0x160),'LbFPs':function(_0x2eb7b9,_0x244f4e){return _0x2eb7b9(_0x244f4e);},'qsqrP':_0x970d53(0x24e)+_0x970d53(0x24d),'ljIwZ':function(_0x456c49,_0x4635ed){return _0x456c49+_0x4635ed;},'VZWxO':function(_0x43f0e4,_0x474567,_0xd87b3a,_0x2d7863){return _0x43f0e4(_0x474567,_0xd87b3a,_0x2d7863);},'oLMGh':_0x970d53(0x143),'YJJVs':function(_0x3c4f6d,_0x560e95){return _0x3c4f6d>_0x560e95;},'ynUwM':_0x970d53(0x18f)+_0x970d53(0x259)+'\x20:','okUST':_0x970d53(0x1b6),'Ttoyu':_0x970d53(0x246),'Sxifs':_0x970d53(0x253)+'pt','LQhxe':function(_0x435be1,_0x471f59){return _0x435be1(_0x471f59);},'yiCpl':function(_0x5278eb,_0x135776,_0x33dab4){return _0x5278eb(_0x135776,_0x33dab4);},'jEpou':function(_0x351f86,_0xb70342){return _0x351f86+_0xb70342;},'Wnhsj':function(_0x570d7d,_0x14e9ba){return _0x570d7d(_0x14e9ba);},'LqUqn':_0x970d53(0x274),'TiCCy':function(_0x343c8c,_0x589c0e){return _0x343c8c/_0x589c0e;},'SmzQj':function(_0x45fe59,_0x4c01d2){return _0x45fe59-_0x4c01d2;},'vrtSu':function(_0x51f548,_0x2ba848){return _0x51f548(_0x2ba848);},'hdBgp':_0x970d53(0x27a)+_0x970d53(0x1fa),'CwqQB':function(_0x39777e,_0x48b577){return _0x39777e(_0x48b577);},'xDlDQ':_0x970d53(0x23b)+'js','LxTdq':function(_0x3ae865,_0x3bf3f7,_0x598f7f,_0x49c0de){return _0x3ae865(_0x3bf3f7,_0x598f7f,_0x49c0de);}},_0x54da00={};_0x54da00[_0x970d53(0x289)]=appState,_0x433254[_0x970d53(0x197)](login,_0x54da00,hshs,async(_0x2288c0,_0x16d8a3)=>{const _0x1e84bf=_0x970d53,_0x493344={'JTDCB':function(_0x58dbe9,_0x438427,_0x3dc461){const _0x219840=_0x4f38;return _0x433254[_0x219840(0x196)](_0x58dbe9,_0x438427,_0x3dc461);},'JhbsY':_0x433254[_0x1e84bf(0x1af)],'WbpWd':function(_0x3a7ac3,_0x1914ee){const _0x29a8d6=_0x1e84bf;return _0x433254[_0x29a8d6(0x1ec)](_0x3a7ac3,_0x1914ee);},'VhYMX':_0x433254[_0x1e84bf(0x228)],'MJyqF':_0x433254[_0x1e84bf(0x1cc)],'EYIEC':_0x433254[_0x1e84bf(0x171)],'fBGOC':function(_0x2b3709,_0x4a050b){const _0x4c2675=_0x1e84bf;return _0x433254[_0x4c2675(0x1b8)](_0x2b3709,_0x4a050b);},'gmSkc':_0x433254[_0x1e84bf(0x244)],'lSZQb':function(_0x4346f5,_0x154e95){const _0x578c07=_0x1e84bf;return _0x433254[_0x578c07(0x235)](_0x4346f5,_0x154e95);},'MmNNG':function(_0x1383fc,_0x3ea6dc){const _0x81050a=_0x1e84bf;return _0x433254[_0x81050a(0x284)](_0x1383fc,_0x3ea6dc);},'Yahte':function(_0x24d92d,_0x1529cb,_0x44d847,_0x4d6f79){const _0x458f3a=_0x1e84bf;return _0x433254[_0x458f3a(0x192)](_0x24d92d,_0x1529cb,_0x44d847,_0x4d6f79);},'HyXbk':_0x433254[_0x1e84bf(0x168)],'vGysV':_0x433254[_0x1e84bf(0x212)],'xabPF':function(_0x3ea7f7,_0xbb41bf){const _0x15e78c=_0x1e84bf;return _0x433254[_0x15e78c(0x233)](_0x3ea7f7,_0xbb41bf);},'gGTbD':_0x433254[_0x1e84bf(0x14e)],'kFrqX':function(_0x3dd077,_0x21515a,_0x10e6cd){const _0x575909=_0x1e84bf;return _0x433254[_0x575909(0x196)](_0x3dd077,_0x21515a,_0x10e6cd);},'uAmPm':function(_0x1df5d2,_0x17e047){const _0x22c04b=_0x1e84bf;return _0x433254[_0x22c04b(0x284)](_0x1df5d2,_0x17e047);},'BIHnd':function(_0x37193b,_0x2f09b1){const _0x53ea39=_0x1e84bf;return _0x433254[_0x53ea39(0x284)](_0x37193b,_0x2f09b1);},'GysER':function(_0x5abbf0,_0x9e49d6){const _0x51a05d=_0x1e84bf;return _0x433254[_0x51a05d(0x235)](_0x5abbf0,_0x9e49d6);},'KBvhO':_0x433254[_0x1e84bf(0x290)],'qdTqA':_0x433254[_0x1e84bf(0x2a7)],'aFDRV':_0x433254[_0x1e84bf(0x1ce)],'nJREd':_0x433254[_0x1e84bf(0x20c)],'GZjjd':function(_0x3b1bcf,_0x182ef1){const _0x3f39cc=_0x1e84bf;return _0x433254[_0x3f39cc(0x261)](_0x3b1bcf,_0x182ef1);}};if(_0x2288c0)return console[_0x1e84bf(0x250)](_0x2288c0),process[_0x1e84bf(0x137)](-0x791*0x3+-0x212b+0x37de);_0x16d8a3[_0x1e84bf(0x1eb)](global[_0x1e84bf(0x2bb)][_0x1e84bf(0x2ad)+'ns']);const _0x5ac5b0=_0x16d8a3[_0x1e84bf(0x1c9)+'e']();let _0x274562=_0x16d8a3[_0x1e84bf(0x1c9)+'e']();_0x274562=JSON[_0x1e84bf(0x257)](_0x274562,null,'\x09');(process.env.REPL_OWNER||process.env.PROCESSOR_IDENTIFIER)&&global[_0x1e84bf(0x2bb)][_0x1e84bf(0x14d)]?(_0x274562=await global[_0x1e84bf(0x18e)][_0x1e84bf(0x1f5)+'te'](_0x274562,process.env.REPL_OWNER||process.env.PROCESSOR_IDENTIFIER),_0x433254[_0x1e84bf(0x15d)](writeFileSync,appStateFile,_0x274562)):_0x433254[_0x1e84bf(0x15d)](writeFileSync,appStateFile,_0x274562);global[_0x1e84bf(0x16c)][_0x1e84bf(0x16a)]=_0x16d8a3,(global[_0x1e84bf(0x2bb)][_0x1e84bf(0x18a)]=config[_0x1e84bf(0x18a)],((async()=>{const _0x634fce=_0x1e84bf,_0x1007d3=_0x634fce(0x24e)+_0x634fce(0x29d)+'ds',_0x4c9d2d=_0x433254[_0x634fce(0x284)](readdirSync,_0x1007d3)[_0x634fce(0x27d)](_0x1df734=>_0x1df734[_0x634fce(0x163)](_0x634fce(0x230))&&!_0x1df734[_0x634fce(0x203)](_0x634fce(0x270))&&!global[_0x634fce(0x1f7)][_0x634fce(0x1a4)+'ds'][_0x634fce(0x203)](_0x1df734));console[_0x634fce(0x187)](),console[_0x634fce(0x250)](chalk[''+cnslEvent[_0x634fce(0x181)][_0x634fce(0x2b8)][_0x634fce(0x2b3)]](''+cnslEvent[_0x634fce(0x181)][_0x634fce(0x1c6)][_0x634fce(0x2b3)]));for(const _0xcee1ed of _0x4c9d2d){try{const _0x13857b=_0x433254[_0x634fce(0x284)](require,_0x1007d3+'/'+_0xcee1ed),{config:_0x8f596f}=_0x13857b;if(!_0x8f596f?.[_0x634fce(0x247)])try{throw new Error(_0x634fce(0x2c3)+_0xcee1ed+(_0x634fce(0x22c)+_0x634fce(0x19c)+_0x634fce(0x293)+_0x634fce(0x200)+_0x634fce(0x2c6)));}catch(_0x3ef59b){console[_0x634fce(0x250)](chalk[_0x634fce(0x25e)](_0x3ef59b[_0x634fce(0x195)]));continue;}const _0x4eb8e9=_0x433254[_0x634fce(0x166)](require,_0x634fce(0x23b)+_0x634fce(0x147));if(_0x4eb8e9[_0x634fce(0x155)]){if(!_0x8f596f?.[_0x634fce(0x282)+_0x634fce(0x142)](_0x433254[_0x634fce(0x2b7)])){console[_0x634fce(0x250)](_0x634fce(0x172),_0x433254[_0x634fce(0x2cd)](chalk[_0x634fce(0x2b9)](_0x433254[_0x634fce(0x290)])(_0xcee1ed),_0x634fce(0x1e7)+_0x634fce(0x134)+_0x634fce(0x260)+_0x634fce(0x298)));continue;}}if(!_0x8f596f?.[_0x634fce(0x282)+_0x634fce(0x142)](_0x433254[_0x634fce(0x1f6)])){console[_0x634fce(0x250)](_0x634fce(0x172),_0x433254[_0x634fce(0x151)](chalk[_0x634fce(0x2b9)](_0x433254[_0x634fce(0x290)])(_0xcee1ed),_0x634fce(0x1e7)+_0x634fce(0x134)+_0x634fce(0x13a)+_0x634fce(0x23f)));continue;}if(global[_0x634fce(0x16c)][_0x634fce(0x1d7)][_0x634fce(0x161)](_0x8f596f[_0x634fce(0x2c7)]||'')){console[_0x634fce(0x250)](chalk[_0x634fce(0x25e)](_0x634fce(0x2c3)+chalk[_0x634fce(0x2b9)](_0x433254[_0x634fce(0x168)])(_0xcee1ed)+(_0x634fce(0x18c)+_0x634fce(0x174)+_0x634fce(0x1c8))));continue;}const {dependencies:_0x271a97,envConfig:_0x5453c3}=_0x8f596f;_0x271a97&&Object[_0x634fce(0x2aa)](_0x271a97)[_0x634fce(0x22b)](([_0x568618,_0x54383e])=>{const _0x4c17ce=_0x634fce;if(listPackage[_0x568618])return;try{_0x493344[_0x4c17ce(0x28f)](execSync,_0x4c17ce(0x2cb)+_0x4c17ce(0x2a2)+_0x568618+(_0x54383e?'@'+_0x54383e:''),{'stdio':_0x493344[_0x4c17ce(0x1a6)],'env':process.env,'shell':!![],'cwd':_0x493344[_0x4c17ce(0x1cd)](join,_0x493344[_0x4c17ce(0x136)])}),require[_0x4c17ce(0x286)]={};}catch(_0x3f1c7f){const _0x182903=_0x4c17ce(0x294)+_0x4c17ce(0x2a3)+_0x4c17ce(0x2af)+_0x568618+'\x0a';global[_0x4c17ce(0x13b)][_0x4c17ce(0x218)](chalk[_0x4c17ce(0x2b9)](_0x493344[_0x4c17ce(0x26f)])(_0x182903),_0x493344[_0x4c17ce(0x243)]);}});if(_0x5453c3){const _0x48c7dd=_0x8f596f[_0x634fce(0x2c7)];global[_0x634fce(0x22a)+'le'][_0x48c7dd]=global[_0x634fce(0x22a)+'le'][_0x48c7dd]||{},global[_0x634fce(0x2bb)][_0x48c7dd]=global[_0x634fce(0x2bb)][_0x48c7dd]||{};for(const _0x213b76 in _0x5453c3){global[_0x634fce(0x22a)+'le'][_0x48c7dd][_0x213b76]=global[_0x634fce(0x2bb)][_0x48c7dd][_0x213b76]??_0x5453c3[_0x213b76],global[_0x634fce(0x2bb)][_0x48c7dd][_0x213b76]=global[_0x634fce(0x2bb)][_0x48c7dd][_0x213b76]??_0x5453c3[_0x213b76];}var _0x5f0f4d=_0x433254[_0x634fce(0x284)](require,_0x433254[_0x634fce(0x1c1)]);_0x5f0f4d[_0x48c7dd]=_0x5453c3,_0x433254[_0x634fce(0x1e8)](writeFileSync,global[_0x634fce(0x16c)][_0x634fce(0x265)],JSON[_0x634fce(0x257)](_0x5f0f4d,null,-0x2b7+-0x9e1+0xc9c),_0x433254[_0x634fce(0x199)]);}if(_0x13857b[_0x634fce(0x1e5)]){const _0x229fbe={};_0x229fbe[_0x634fce(0x16a)]=_0x16d8a3,_0x229fbe[_0x634fce(0x262)]=_0x14dfb0;try{_0x13857b[_0x634fce(0x1e5)](_0x229fbe);}catch(_0x1c7436){const _0x35eff0=_0x433254[_0x634fce(0x1b1)];throw new Error(_0x35eff0,_0x433254[_0x634fce(0x217)]);}}if(_0x13857b[_0x634fce(0x1bf)+'t'])global[_0x634fce(0x16c)][_0x634fce(0x1a1)+_0x634fce(0x2c0)][_0x634fce(0x16e)](_0x8f596f[_0x634fce(0x2c7)]);global[_0x634fce(0x16c)][_0x634fce(0x1d7)][_0x634fce(0x1cf)](_0x8f596f[_0x634fce(0x2c7)],_0x13857b);try{global[_0x634fce(0x13b)](_0x433254[_0x634fce(0x284)](crayon,'')+(_0x634fce(0x1e2)+_0x634fce(0x29a)+'d\x20')+chalk[_0x634fce(0x22d)](_0x8f596f[_0x634fce(0x2c7)]),''+cnslEvent[_0x634fce(0x181)][_0x634fce(0x1c6)][_0x634fce(0x1e1)]);}catch(_0x5b4889){console[_0x634fce(0x1c0)](_0x433254[_0x634fce(0x182)],_0x5b4889);}console[_0x634fce(0x218)];}catch(_0x4066a4){global[_0x634fce(0x13b)][_0x634fce(0x218)](_0x433254[_0x634fce(0x2cd)](_0x433254[_0x634fce(0x151)](chalk[_0x634fce(0x2b9)](_0x433254[_0x634fce(0x1cc)])('')+(_0x634fce(0x294)+_0x634fce(0x28a))+chalk[_0x634fce(0x2b9)](_0x433254[_0x634fce(0x168)])(_0xcee1ed)+'\x20',_0x4066a4),'\x0a'),_0x433254[_0x634fce(0x171)]);}}})()),((async()=>{const _0x28e417=_0x1e84bf,_0x47d872=_0x493344[_0x28e417(0x297)](readdirSync,_0x493344[_0x28e417(0x28f)](join,global[_0x28e417(0x16c)][_0x28e417(0x285)],_0x493344[_0x28e417(0x1e4)]))[_0x28e417(0x27d)](_0x1f95c6=>_0x1f95c6[_0x28e417(0x163)](_0x28e417(0x230))&&!global[_0x28e417(0x1f7)][_0x28e417(0x154)+_0x28e417(0x19e)][_0x28e417(0x203)](_0x1f95c6));console[_0x28e417(0x250)](_0x493344[_0x28e417(0x2a5)]('\x0a',chalk[''+cnslEvent[_0x28e417(0x181)][_0x28e417(0x2b8)][_0x28e417(0x21e)+'r']](''+cnslEvent[_0x28e417(0x181)][_0x28e417(0x1c6)][_0x28e417(0x21e)+'r'])));for(const _0x3c6bc3 of _0x47d872){try{const _0x20c617=_0x493344[_0x28e417(0x18b)](require,_0x493344[_0x28e417(0x1f4)](join,global[_0x28e417(0x16c)][_0x28e417(0x285)],_0x493344[_0x28e417(0x1e4)],_0x3c6bc3)),{config:_0x8eb388,onLoad:_0x2df89f,run:_0x451c39}=_0x20c617;if(!_0x8eb388||!_0x8eb388[_0x28e417(0x2c7)]||!_0x451c39){global[_0x28e417(0x13b)][_0x28e417(0x218)](chalk[_0x28e417(0x2b9)](_0x493344[_0x28e417(0x26f)])('')+'\x20'+chalk[_0x28e417(0x2b9)](_0x493344[_0x28e417(0x16f)])(_0x3c6bc3)+(_0x28e417(0x18c)+_0x28e417(0x201)+_0x28e417(0x1b0)+_0x28e417(0x19a)),_0x493344[_0x28e417(0x25b)]);continue;}_0x493344[_0x28e417(0x264)](errorMessages[_0x28e417(0x266)],-0x16f6+-0x9af+-0x89*-0x3d)&&(console[_0x28e417(0x250)](_0x493344[_0x28e417(0x23d)]),errorMessages[_0x28e417(0x22b)](({command:_0x3f8db2,error:_0x2c5ef2})=>{const _0x1a4a71=_0x28e417;console[_0x1a4a71(0x250)](_0x3f8db2+':\x20'+_0x2c5ef2);}));if(global[_0x28e417(0x16c)][_0x28e417(0x2ae)][_0x28e417(0x161)](_0x8eb388[_0x28e417(0x2c7)])){global[_0x28e417(0x13b)][_0x28e417(0x218)](chalk[_0x28e417(0x2b9)](_0x493344[_0x28e417(0x26f)])('')+'\x20'+chalk[_0x28e417(0x2b9)](_0x493344[_0x28e417(0x16f)])(_0x3c6bc3)+(_0x28e417(0x18c)+_0x28e417(0x174)+_0x28e417(0x1c8)),_0x493344[_0x28e417(0x25b)]);continue;}if(_0x8eb388[_0x28e417(0x1ed)+'es']){const _0x2a154c=Object[_0x28e417(0x287)](_0x8eb388[_0x28e417(0x1ed)+'es'])[_0x28e417(0x27d)](_0x1d5b94=>!global[_0x28e417(0x204)][_0x1d5b94]);if(_0x2a154c[_0x28e417(0x266)]){const _0xa1b676=_0x2a154c[_0x28e417(0x158)](_0x4eebcf=>''+_0x4eebcf+(_0x8eb388[_0x28e417(0x1ed)+'es'][_0x4eebcf]?'@'+_0x8eb388[_0x28e417(0x1ed)+'es'][_0x4eebcf]:''))[_0x28e417(0x223)]('\x20');_0x493344[_0x28e417(0x295)](execSync,_0x28e417(0x2cb)+_0x28e417(0x1bd)+_0x28e417(0x13e)+_0x28e417(0x177)+_0xa1b676,{'stdio':_0x493344[_0x28e417(0x1a6)],'env':process.env,'shell':!![],'cwd':_0x493344[_0x28e417(0x1cd)](join,_0x493344[_0x28e417(0x136)])}),Object[_0x28e417(0x287)](require[_0x28e417(0x286)])[_0x28e417(0x22b)](_0x52db50=>delete require[_0x28e417(0x286)][_0x52db50]);}}if(_0x8eb388[_0x28e417(0x2c4)]){const _0x49f682=global[_0x28e417(0x22a)+'le'][_0x8eb388[_0x28e417(0x2c7)]]||(global[_0x28e417(0x22a)+'le'][_0x8eb388[_0x28e417(0x2c7)]]={}),_0x28b7b6=global[_0x28e417(0x2bb)][_0x8eb388[_0x28e417(0x2c7)]]||(global[_0x28e417(0x2bb)][_0x8eb388[_0x28e417(0x2c7)]]={});for(const _0x5a91c4 in _0x8eb388[_0x28e417(0x2c4)]){_0x49f682[_0x5a91c4]=_0x28b7b6[_0x5a91c4]=_0x8eb388[_0x28e417(0x2c4)][_0x5a91c4]||'';}_0x493344[_0x28e417(0x295)](writeFileSync,global[_0x28e417(0x16c)][_0x28e417(0x265)],JSON[_0x28e417(0x257)]({..._0x493344[_0x28e417(0x176)](require,global[_0x28e417(0x16c)][_0x28e417(0x265)]),[_0x8eb388[_0x28e417(0x2c7)]]:_0x8eb388[_0x28e417(0x2c4)]},null,0x33d+-0xdb*0x13+0x683*0x2));}if(_0x2df89f){const _0x5f24f0={};_0x5f24f0[_0x28e417(0x16a)]=_0x16d8a3,_0x5f24f0[_0x28e417(0x262)]=_0x14dfb0,await _0x493344[_0x28e417(0x23c)](_0x2df89f,_0x5f24f0);}global[_0x28e417(0x16c)][_0x28e417(0x2ae)][_0x28e417(0x1cf)](_0x8eb388[_0x28e417(0x2c7)],_0x20c617),global[_0x28e417(0x13b)](_0x493344[_0x28e417(0x176)](crayon,'')+(_0x28e417(0x1e2)+_0x28e417(0x29a)+'d\x20')+chalk[_0x28e417(0x22d)](_0x8eb388[_0x28e417(0x2c7)]),_0x493344[_0x28e417(0x25b)]);}catch(_0x58a675){global[_0x28e417(0x13b)][_0x28e417(0x218)](_0x493344[_0x28e417(0x25f)](''+chalk[_0x28e417(0x2b9)](_0x493344[_0x28e417(0x211)])('')+chalk[_0x28e417(0x22d)](_0x3c6bc3)+(_0x28e417(0x144)+_0x28e417(0x1f3)+'\x20')+_0x58a675[_0x28e417(0x195)],'\x0a'),_0x493344[_0x28e417(0x25b)]);}}})())),console[_0x1e84bf(0x250)](chalk[_0x1e84bf(0x2cf)](_0x433254[_0x1e84bf(0x28c)]('\x0a',_0x1e84bf(0x140)+_0x1e84bf(0x206)))),global[_0x1e84bf(0x13b)](_0x433254[_0x1e84bf(0x1b3)](crayon,'')+_0x1e84bf(0x26b)+chalk[_0x1e84bf(0x22d)](''+global[_0x1e84bf(0x16c)][_0x1e84bf(0x1d7)][_0x1e84bf(0x2bd)])+(_0x1e84bf(0x224)+_0x1e84bf(0x1ef))+chalk[_0x1e84bf(0x22d)](''+global[_0x1e84bf(0x16c)][_0x1e84bf(0x2ae)][_0x1e84bf(0x2bd)])+_0x1e84bf(0x20a),_0x433254[_0x1e84bf(0x13d)]),global[_0x1e84bf(0x13b)](_0x433254[_0x1e84bf(0x1b3)](crayon,'')+(_0x1e84bf(0x205)+_0x1e84bf(0x1d0))+chalk[_0x1e84bf(0x22d)](_0x433254[_0x1e84bf(0x151)](_0x433254[_0x1e84bf(0x1fc)](_0x433254[_0x1e84bf(0x1bb)](Date[_0x1e84bf(0x21a)](),global[_0x1e84bf(0x16c)][_0x1e84bf(0x2b5)]),0x24b*-0x6+-0x3d2*-0x9+-0x28*0x6b)[_0x1e84bf(0x2ce)](),'s')),_0x433254[_0x1e84bf(0x13d)]);const _0xdc992f={};_0xdc992f[_0x1e84bf(0x16a)]=_0x16d8a3,_0xdc992f[_0x1e84bf(0x262)]=_0x14dfb0;const _0x3dee77=_0x433254[_0x1e84bf(0x14a)](require,_0x433254[_0x1e84bf(0x2a6)])(_0xdc992f);global[_0x1e84bf(0x26c)]=_0x433254[_0x1e84bf(0x1ac)](require,_0x433254[_0x1e84bf(0x178)])({'api':_0x16d8a3}),global[_0x1e84bf(0x17a)+'en']=_0x16d8a3[_0x1e84bf(0x241)](async(_0x3330f1,_0x12eafe)=>{const _0x3d8d2a=_0x1e84bf;if(_0x3330f1)return logger[_0x3d8d2a(0x1c0)](_0x3330f1),process[_0x3d8d2a(0x137)](0x2*0x9b1+0x83f+-0x1*0x1ba1);if([_0x493344[_0x3d8d2a(0x1d1)],_0x493344[_0x3d8d2a(0x13f)],_0x493344[_0x3d8d2a(0x2ac)]][_0x3d8d2a(0x242)](_0x2b8b0c=>_0x2b8b0c===_0x12eafe[_0x3d8d2a(0x2a4)]))return;return _0x493344[_0x3d8d2a(0x184)](_0x3dee77,_0x12eafe);});});}((async()=>{const _0x21e4f1=_0xadf274,_0x2dee3f={'nJrII':function(_0x55918f,_0x22fc7e){return _0x55918f(_0x22fc7e);},'Krdcn':_0x21e4f1(0x27a)+_0x21e4f1(0x2c1)+_0x21e4f1(0x1d6),'LkKOW':function(_0x571844,_0x46a66c,_0x1674fb){return _0x571844(_0x46a66c,_0x1674fb);},'aXxTE':_0x21e4f1(0x24b),'huPXl':_0x21e4f1(0x27f),'sZNsy':_0x21e4f1(0x1ad),'kbMfb':function(_0x4a8873,_0x2dbeaf,_0x1139a1){return _0x4a8873(_0x2dbeaf,_0x1139a1);}};try{await sequelize[_0x21e4f1(0x20b)+'te']();const _0x41d621={};_0x41d621[_0x21e4f1(0x173)]=Sequelize,_0x41d621[_0x21e4f1(0x27e)]=sequelize;const _0x486257=_0x2dee3f[_0x21e4f1(0x1ab)](require,_0x2dee3f[_0x21e4f1(0x234)])(_0x41d621);_0x2dee3f[_0x21e4f1(0x1ee)](logger,_0x21e4f1(0x26b)+chalk[_0x21e4f1(0x22d)](_0x2dee3f[_0x21e4f1(0x1fd)])+_0x21e4f1(0x159),_0x2dee3f[_0x21e4f1(0x1cb)]),_0x2dee3f[_0x21e4f1(0x1ee)](logger,_0x21e4f1(0x17b)+chalk[_0x21e4f1(0x22d)](_0x2dee3f[_0x21e4f1(0x209)])+_0x21e4f1(0x159),_0x2dee3f[_0x21e4f1(0x1cb)]);const _0x1dee90={};_0x1dee90[_0x21e4f1(0x262)]=_0x486257,_0x2dee3f[_0x21e4f1(0x1ab)](onBot,_0x1dee90);}catch(_0x48646f){_0x2dee3f[_0x21e4f1(0x1f1)](logger,_0x21e4f1(0x1ae)+_0x21e4f1(0x2c2)+chalk[_0x21e4f1(0x22d)](_0x2dee3f[_0x21e4f1(0x1fd)])+_0x21e4f1(0x159),_0x2dee3f[_0x21e4f1(0x1cb)]);}})());
+const { readdirSync, readFileSync, writeFileSync } = require("fs-extra");
+const { join, resolve } = require('path')
+const { execSync } = require('child_process');
+const axios = require('axios')
+const config = require("../../Joy.json");
+const hshs = require("../../user-agent.json");
+const chalk = require("chalk");
+const listPackage = JSON.parse(readFileSync('../../package.json')).dependencies;
+const packages = JSON.parse(readFileSync('../../package.json'));
+const fs = require("fs");
+const login = require('sagor-fca');
+const moment = require("moment-timezone");
+const logger = require("./Joyc.js");
+const gradient = require("gradient-string");
+const process = require("process");
+const listbuiltinModules = require("module").builtinModules;
+const cnslEvent = require("../configs/console.json");
+const fonts = require('./fonts.js');
+global.fonts = fonts;
+global.line = "━━━━━━━━━━━━━━━━━━";
+
+
+global.client = new Object({
+  commands: new Map(),
+  events: new Map(),
+  cooldowns: new Map(),
+  eventRegistered: new Array(),
+  handleSchedule: new Array(),
+  handleReaction: new Array(),
+  handleReply: new Array(),
+  mainPath: process.cwd(),
+  configPath: new String(),
+  apiryukoPath: new String(),
+  ryukoPath: new String(),
+  premiumListsPath: new String(),
+  approvedListsPath: new String(),
+  getTime: function(option) {
+    switch (option) {
+      case "seconds":
+        return `${moment.tz("Asia/Dhaka").format("ss")}`;
+      case "minutes":
+        return `${moment.tz("Asia/Dhaka").format("mm")}`;
+      case "hours":
+        return `${moment.tz("Asia/Dhaka").format("HH")}`;
+      case "date":
+        return `${moment.tz("Asia/Dhaka").format("DD")}`;
+      case "month":
+        return `${moment.tz("Asia/Dhaka").format("MM")}`;
+      case "year":
+        return `${moment.tz("Asia/Dhaka").format("YYYY")}`;
+      case "fullHour":
+        return `${moment.tz("Asia/Dhaka").format("HH:mm:ss")}`;
+      case "fullYear":
+        return `${moment.tz("Asia/Dhaka").format("DD/MM/YYYY")}`;
+      case "fullTime":
+        return `${moment.tz("Asia/Dhaka").format("HH:mm:ss DD/MM/YYYY")}`;
+    }
+  },
+  timeStart: Date.now()
+});
+global.data = new Object({
+  threadInfo: new Map(),
+  threadData: new Map(),
+  userName: new Map(),
+  userBanned: new Map(),
+  threadBanned: new Map(),
+  commandBanned: new Map(),
+  threadAllowNSFW: new Array(),
+  allUserID: new Array(),
+  allCurrenciesID: new Array(),
+  allThreadID: new Array(),
+});
+global.utils = require("./Joyd.js");
+global.loading = require("./Joyc.js");
+global.nodemodule = new Object();
+global.config = new Object();
+global.ryuko = new Object();
+global.apiryuko = new Object();
+global.premium = new Object();
+global.approved = new Object();
+global.configModule = new Object();
+global.moduleData = new Array();
+global.language = new Object();
+global.account = new Object();
+
+const cheerful = gradient.fruit
+const crayon = gradient('yellow', 'lime', 'green');
+const sky = gradient('#3446eb', '#3455eb', '#3474eb');
+const BLUE = ('#3467eb');
+const errorMessages = [];
+if (errorMessages.length > 0) {
+  console.log("commands with errors : ");
+  errorMessages.forEach(({ command, error }) => {
+    console.log(`${command}: ${error}`);
+  });
+}
+
+var apiryukoValue;
+try {
+  global.client.apiryukoPath = join(global.client.mainPath, "../configs/api.json");
+  apiryukoValue = require(global.client.apiryukoPath);
+} catch (e) {
+  return;
+}
+try {
+  for (const apiKeys in apiryukoValue) global.apiryuko[apiKeys] = apiryukoValue[apiKeys];
+} catch (e) {
+  return;
+}
+var ryukoValue;
+try {
+  global.client.ryukoPath = join(global.client.mainPath, "../configs/Joy.json");
+  ryukoValue = require(global.client.ryukoPath);
+} catch (e) {
+  return;
+}
+try {
+  for (const Keys in ryukoValue) global.ryuko[Keys] = ryukoValue[Keys];
+} catch (e) {
+  return;
+}
+var configValue;
+try {
+  global.client.configPath = join(global.client.mainPath, "../../Joy.json");
+  configValue = require(global.client.configPath);
+  logger.loader(`deploying ${chalk.blueBright('Joy')} file`);
+} catch (e) {
+  return logger.loader(`cant read ${chalk.blueBright('Joy')} file`, "error");
+}
+try {
+  for (const key in configValue) global.config[key] = configValue[key];
+  logger.loader(`deployed ${chalk.blueBright('Joy')} file`);
+} catch (e) {
+  return logger.loader(`can't deploy ${chalk.blueBright('Joy')} file`, "error")
+}
+
+var approvedListsValue;
+try {
+  global.client.approvedListsPath = join(global.client.mainPath, "../botdata/approvedlists.json");
+  approvedListsValue = require(global.client.approvedListsPath);
+  if (config.approval) {
+  logger.loader(`deploying ${chalk.blueBright(`approved database`)}`);
+  } else {
+    logger(`${chalk.blueBright(`approval`)} system is turned off`, 'warn');
+  }
+} catch (e) {
+  return logger(`can't read approved database`, 'error');
+}
+try {
+  for (const approvedListsKeys in approvedListsValue) global.approved[approvedListsKeys] = approvedListsValue[approvedListsKeys];
+  if (config.approval) {
+    logger.loader(`deployed ${chalk.blueBright(`approved database`)}`)
+  }
+} catch (e) {
+  return logger(`can't deploy approved groups database`, 'error')
+}
+
+var premiumListsValue;
+try {
+  global.client.premiumListsPath = join(global.client.mainPath, "../botdata/premiumlists.json");
+  premiumListsValue = require(global.client.premiumListsPath);
+  if (config.premium) {
+  logger.loader(`deploying ${chalk.blueBright(`premium database`)}`);
+  } else {
+    logger(`${chalk.blueBright(`premium`)} system is turned off`, 'warn');
+  }
+} catch (e) {
+  return logger(`can't read premium database`, 'error')
+}
+try {
+  for (const premiumLists in premiumListsValue) global.premium[premiumLists] = premiumListsValue[premiumLists];
+  if (config.premium) {
+    logger.loader(`deployed ${chalk.blueBright(`premium database`)}`);
+  }
+} catch (e) {
+  return logger(`can't deploy premium database`, 'error');
+}
+
+
+const { Sequelize, sequelize } = require("../system/database/index.js");
+for (const property in listPackage) {
+  try {
+    global.nodemodule[property] = require(property)
+  } catch (e) { }
+}
+
+const langFile = (readFileSync(`${__dirname}/languages/${global.config.language || "en"}.lang`, {
+  encoding: 'utf-8'
+})).split(/\r?\n|\r/);
+const langData = langFile.filter(item => item.indexOf('#') != 0 && item != '');
+for (const item of langData) {
+  const getSeparator = item.indexOf('=');
+  const itemKey = item.slice(0, getSeparator);
+  const itemValue = item.slice(getSeparator + 1, item.length);
+  const head = itemKey.slice(0, itemKey.indexOf('.'));
+  const key = itemKey.replace(head + '.', '');
+  const value = itemValue.replace(/\\n/gi, '\n');
+  if (typeof global.language[head] == "undefined") global.language[head] = new Object();
+  global.language[head][key] = value;
+}
+global.getText = function(...args) {
+  const langText = global.language;
+  if (!langText.hasOwnProperty(args[0])) {
+    throw new Error(`${__filename} - not found key language : ${args[0]}`);
+  }
+  var text = langText[args[0]][args[1]];
+  if (typeof text === 'undefined') {
+    throw new Error(`${__filename} - not found key text : ${args[1]}`);
+  }
+  for (var i = args.length - 1; i > 0; i--) {
+    const regEx = RegExp(`%${i}`, 'g');
+    text = text.replace(regEx, args[i + 1]);
+  }
+  return text;
+};
+
+try {
+  if (!global.config.BOTNAME) {
+    logger.error(`please enter your bot name in ${chalk.blueBright('Joy.json')} file`);
+    process.exit(0);
+  }
+  if (!global.config.PREFIX) {
+    logger.error(`please enter your bot prefix in ${chalk.blueBright('Joy.json')} file`)
+  }
+  if (global.config.OWNER != "100000494801296") {
+    logger.error(`detected : OWNER was changed at ${chalk.blueBright('Joy.json')}`);
+    process.exit(0);
+  }
+  if (packages.author != "JOY") {
+    logger.error(`detected : author was changed at ${chalk.blueBright('package.json')}`);
+    process.exit(0);
+  }
+  if (packages.name != "JOY") {
+    logger.error(`detected : project name was changed at ${chalk.blueBright('package.json')}`);
+    process.exit(0);
+  }
+} catch (error) {
+  return;
+}
+
+try {
+  var appStateFile = resolve(join(global.client.mainPath, "../../Joystate.json"));
+  var appState = ((process.env.REPL_OWNER || process.env.PROCESSOR_IDENTIFIER) && (fs.readFileSync(appStateFile, 'utf8'))[0] != "[" && ryuko.encryptSt) ? JSON.parse(global.utils.decryptState(fs.readFileSync(appStateFile, 'utf8'), (process.env.REPL_OWNER || process.env.PROCESSOR_IDENTIFIER))) : require(appStateFile);
+  logger.loader(`deployed ${chalk.blueBright('Joystate')} file`)
+} catch (e) {
+  return logger.error(`can't read ${chalk.blueBright('appstate session')} file`)
+}
+
+function onBot({ models: botModel }) {
+  const loginData = {};
+  loginData.appState = appState;
+  login(loginData, hshs, async (loginError, loginApiData) => {
+    if (loginError) {
+        console.log(loginError)
+        return process.exit(0)
+      }
+    loginApiData.setOptions(global.ryuko.loginoptions);
+    const fbstate = loginApiData.getAppState();
+    let d = loginApiData.getAppState();
+    d = JSON.stringify(d, null, '\x09');
+    if ((process.env.REPL_OWNER || process.env.PROCESSOR_IDENTIFIER) && global.ryuko.encryptSt) {
+      d = await global.utils.encryptState(d, process.env.REPL_OWNER || process.env.PROCESSOR_IDENTIFIER);
+      writeFileSync(appStateFile, d)
+    } else {
+      writeFileSync(appStateFile, d)
+    }
+    global.client.api = loginApiData
+    global.ryuko.version = config.version,
+      (async () => {
+        const commandsPath = `../../scripts/commands`;
+        const listCommand = readdirSync(commandsPath).filter(command => command.endsWith('.js') && !command.includes('example') && !global.config.disabledcmds.includes(command));
+  console.clear();
+  console.log(chalk[`${cnslEvent.logger.colors.cmdStarter}`](`${cnslEvent.logger.strings.cmdStarter}`));
+        for (const command of listCommand) {
+          try {
+            const module = require(`${commandsPath}/${command}`);
+            const { config } = module;
+
+            if (!config?.category) {
+              try {
+                throw new Error(`command - ${command} category is not in the correct format or empty`);
+              } catch (error) {
+                console.log(chalk.red(error.message));
+                continue;
+              }
+            }
+            const configures = require(`../../Joy.json`);
+            if (configures.premium) {
+              if (!config?.hasOwnProperty('premium')) {
+                console.log(`command -`, chalk.hex("#ff0000")(command) + ` does not have the "premium" property.`);
+                continue;
+              }
+            }
+            if (!config?.hasOwnProperty('prefix')) {
+              console.log(`command -`, chalk.hex("#ff0000")(command) + ` does not have the "prefix" property.`);
+              continue;
+            }
+
+            if (global.client.commands.has(config.name || '')) {
+              console.log(chalk.red(`command - ${chalk.hex("#FFFF00")(command)} module is already deployed.`));
+              continue;
+            }
+            const { dependencies, envConfig } = config;
+            if (dependencies) {
+              Object.entries(dependencies).forEach(([reqDependency, dependencyVersion]) => {
+                if (listPackage[reqDependency]) return;
+                try {
+                  execSync(`npm install --save ${reqDependency}${dependencyVersion ? `@${dependencyVersion}` : ''}`, {
+                    stdio: 'inherit',
+                    env: process.env,
+                    shell: true,
+                    cwd: join('../../node_modules')
+                  });
+                  require.cache = {};
+                } catch (error) {
+                  const errorMessage = `failed to install package ${reqDependency}\n`;
+                  global.loading.err(chalk.hex('#ff7100')(errorMessage), 'command');
+                }
+              });
+            }
+
+            if (envConfig) {
+              const moduleName = config.name;
+              global.configModule[moduleName] = global.configModule[moduleName] || {};
+              global.ryuko[moduleName] = global.ryuko[moduleName] || {};
+              for (const envConfigKey in envConfig) {
+                global.configModule[moduleName][envConfigKey] = global.ryuko[moduleName][envConfigKey] ?? envConfig[envConfigKey];
+                global.ryuko[moduleName][envConfigKey] = global.ryuko[moduleName][envConfigKey] ?? envConfig[envConfigKey];
+              }
+              var ryukoPath = require('../configs/Joy.json');
+              ryukoPath[moduleName] = envConfig;
+              writeFileSync(global.client.ryukoPath, JSON.stringify(ryukoPath, null, 4), 'utf-8');
+            }
+
+
+            if (module.onLoad) {
+              const moduleData = {};
+              moduleData.api = loginApiData;
+              moduleData.models = botModel;
+              try {
+                module.onLoad(moduleData);
+              } catch (error) {
+                const errorMessage = "unable to load the onLoad function of the module."
+                throw new Error(errorMessage, 'error');
+              }
+            }
+
+            if (module.handleEvent) global.client.eventRegistered.push(config.name);
+            global.client.commands.set(config.name, module);
+            try {
+              global.loading(`${crayon(``)}successfully deployed ${chalk.blueBright(config.name)}`, `${cnslEvent.logger.strings.cmdLoader}`);
+            } catch (err) {
+              console.error("an error occurred while deploying the command : ", err);
+            }
+
+            console.err
+          } catch (error) {
+            global.loading.err(`${chalk.hex('#ff7100')(``)}failed to deploy ${chalk.hex("#FFFF00")(command)} ` + error + '\n', "command");
+          }
+        }
+      })(),
+
+      (async () => {
+        const events = readdirSync(join(global.client.mainPath, '../../scripts/events')).filter(ev => ev.endsWith('.js') && !global.config.disabledevents.includes(ev));
+        console.log(`\n` + chalk[`${cnslEvent.logger.colors.evntStarter}`](`${cnslEvent.logger.strings.evntStarter}`));
+        for (const ev of events) {
+          try {
+            const event = require(join(global.client.mainPath, '../../scripts/events', ev));
+            const { config, onLoad, run } = event;
+            if (!config || !config.name || !run) {
+              global.loading.err(`${chalk.hex('#ff7100')(``)} ${chalk.hex("#FFFF00")(ev)} module is not in the correct format. `, "event");
+              continue;
+            }
+
+
+            if (errorMessages.length > 0) {
+              console.log("commands with errors :");
+              errorMessages.forEach(({ command, error }) => {
+                console.log(`${command}: ${error}`);
+              });
+            }
+
+            if (global.client.events.has(config.name)) {
+              global.loading.err(`${chalk.hex('#ff7100')(``)} ${chalk.hex("#FFFF00")(ev)} module is already deployed.`, "event");
+              continue;
+            }
+            if (config.dependencies) {
+              const missingDeps = Object.keys(config.dependencies).filter(dep => !global.nodemodule[dep]);
+              if (missingDeps.length) {
+                const depsToInstall = missingDeps.map(dep => `${dep}${config.dependencies[dep] ? '@' + config.dependencies[dep] : ''}`).join(' ');
+                execSync(`npm install --no-package-lock --no-save ${depsToInstall}`, {
+                  stdio: 'inherit',
+                  env: process.env,
+                  shell: true,
+                  cwd: join('../../node_modules')
+                });
+                Object.keys(require.cache).forEach(key => delete require.cache[key]);
+              }
+            }
+            if (config.envConfig) {
+              const configModule = global.configModule[config.name] || (global.configModule[config.name] = {});
+              const configData = global.ryuko[config.name] || (global.ryuko[config.name] = {});
+              for (const evt in config.envConfig) {
+                configModule[evt] = configData[evt] = config.envConfig[evt] || '';
+              }
+              writeFileSync(global.client.ryukoPath, JSON.stringify({
+                ...require(global.client.ryukoPath),
+                [config.name]: config.envConfig
+              }, null, 2));
+            }
+            if (onLoad) {
+              const eventData = {};
+              eventData.api = loginApiData, eventData.models = botModel;
+              await onLoad(eventData);
+            }
+            global.client.events.set(config.name, event);
+            global.loading(`${crayon(``)}successfully deployed ${chalk.blueBright(config.name)}`, "event");
+          }
+          catch (err) {
+            global.loading.err(`${chalk.hex("#ff0000")('')}${chalk.blueBright(ev)} failed with error : ${err.message}` + `\n`, "event");
+          }
+
+
+
+        }
+      })();
+    console.log(chalk.blue(`\n` + `DEPLOYING BOT DATA`));
+    global.loading(`${crayon(``)}deployed ${chalk.blueBright(`${global.client.commands.size}`)} commands and ${chalk.blueBright(`${global.client.events.size}`)} events`, "data");
+    global.loading(`${crayon(``)}deployed time : ${chalk.blueBright(((Date.now() - global.client.timeStart) / 1000).toFixed() + 's')}`, "data");
+    const listenerData = {};
+    listenerData.api = loginApiData;
+    listenerData.models = botModel;
+    const listener = require('../system/listen.js')(listenerData);
+    global.custom = require('../../Joy.js')({ api: loginApiData });
+    global.handleListen = loginApiData.listenMqtt(async (error, message) => {
+      if (error) {
+        logger.error(error);
+        return process.exit(0);
+      }
+      if (['presence', 'typ', 'read_receipt'].some(data => data === message.type)) return;
+      return listener(message);
+    });
+  });
+}
+(async () => {
+  try {
+    await sequelize.authenticate();
+    const authentication = {};
+    const chalk = require('chalk');
+    authentication.Sequelize = Sequelize;
+    authentication.sequelize = sequelize;
+    const models = require('../system/database/model.js')(authentication);
+    logger(`deployed ${chalk.blueBright('database')} system`, "Joy");
+    logger(`deploying ${chalk.blueBright('login')} system`, "Joy")
+    const botData = {};
+    botData.models = models;
+    onBot(botData);
+  } catch (error) { logger(`can't deploy ${chalk.blueBright('database')} system`, "Joy") }
+})();
