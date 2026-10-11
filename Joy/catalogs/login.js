@@ -6,7 +6,7 @@
 // ========================================
 
 // Ekhane FCA package change korbe
-const FCA_PACKAGE = "../system/ws3-fca/index.js";
+const FCA_PACKAGE = "sagor-fca";
 
 let login;
 
