@@ -1,9 +1,9 @@
 module.exports.config = {
 	name: "pending",
-	version: "1.0.5",
-	credits: "ryuko",
-	prefix: false,
-  premium: false,
+	version: "1.0.6",
+	credits: "Joy",
+	prefix: true,
+	premium: false,
 	permission: 2,
 	description: "approve groups",
 	category: "admin",
@@ -16,48 +16,64 @@ module.exports.languages = {
         "cancelSuccess": "dã từ chối thành công %1 nhóm!",
         "notiBox": "box của bạn đã được admin phê duyệt để có thể sử dụng bot",
         "approveSuccess": "dã phê duyệt thành công %1 nhóm!",
-
         "cantGetPendingList": "không thể lấy danh sách các nhóm đang chờ!",
         "returnListPending": "tổng số nhóm cần duyệt : %1 nhóm \n\n%2",
         "returnListClean": "「PENDING」Hiện tại không có nhóm nào trong hàng chờ"
     },
     "en": {
-        "invaildNumber": "%1 is not an invalid number",
-        "cancelSuccess": "refused %1 thread",
-        "notiBox": "group has been approved, you can now use the bot",
-        "approveSuccess": "approved successfully %1 threads",
-
-        "cantGetPendingList": "can't get the pending list",
+        "invaildNumber": "%1 is not a valid number",
+        "cancelSuccess": "refused %1 thread(s)",
+        "notiBox": "Your group has been approved! You can now use the bot.",
+        "approveSuccess": "approved successfully %1 thread(s)",
+        "cantGetPendingList": "can't get the pending list! Check console for details.",
         "returnListPending": "the whole number of groups to approve is : %1 thread \n\n%2",
         "returnListClean": "there is no group in the pending list"
     }
-}
+};
+
+// ডিলে ফাংশন (স্প্যাম এড়াতে)
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 module.exports.handleReply = async function({ api, event, handleReply, getText }) {
     if (String(event.senderID) !== String(handleReply.author)) return;
     const { body, threadID, messageID } = event;
     var count = 0;
 
-    if (isNaN(body) && body.indexOf("c") == 0 || body.indexOf("cancel") == 0) {
-        const index = (body.slice(1, body.length)).split(/\s+/);
+    if (isNaN(body) && (body.indexOf("c") == 0 || body.indexOf("cancel") == 0)) {
+        const index = (body.slice(1).trim()).split(/\s+/);
         for (const singleIndex of index) {
-            console.log(singleIndex);
-            if (isNaN(singleIndex) || singleIndex <= 0 || singleIndex > handleReply.pending.length) return api.sendMessage(getText("invaildNumber", singleIndex), threadID, messageID);
-            api.removeUserFromGroup(api.getCurrentUserID(), handleReply.pending[singleIndex - 1].threadID);
-            count+=1;
+            if (isNaN(singleIndex) || singleIndex <= 0 || singleIndex > handleReply.pending.length) {
+                return api.sendMessage(getText("invaildNumber", singleIndex), threadID, messageID);
+            }
+            const targetThread = handleReply.pending[singleIndex - 1].threadID;
+            try {
+                await api.removeUserFromGroup(api.getCurrentUserID(), targetThread);
+                count += 1;
+            } catch (err) {
+                console.error("Error removing from group:", err);
+            }
+            await delay(1500);
         }
         return api.sendMessage(getText("cancelSuccess", count), threadID, messageID);
     }
     else {
-        const index = body.split(/\s+/);
+        const index = body.trim().split(/\s+/);
         for (const singleIndex of index) {
-            if (isNaN(singleIndex) || singleIndex <= 0 || singleIndex > handleReply.pending.length) return api.sendMessage(getText("invaildNumber", singleIndex), threadID, messageID);
-            api.sendMessage(getText("notiBox"), handleReply.pending[singleIndex - 1].threadID);
-            count+=1;
+            if (isNaN(singleIndex) || singleIndex <= 0 || singleIndex > handleReply.pending.length) {
+                return api.sendMessage(getText("invaildNumber", singleIndex), threadID, messageID);
+            }
+            const targetThread = handleReply.pending[singleIndex - 1].threadID;
+            try {
+                await api.sendMessage(getText("notiBox"), targetThread);
+                count += 1;
+            } catch (err) {
+                console.error("Error sending approval message:", err);
+            }
+            await delay(2000);
         }
         return api.sendMessage(getText("approveSuccess", count), threadID, messageID);
     }
-}
+};
 
 module.exports.run = async function({ api, event, getText }) {
 	const { threadID, messageID } = event;
@@ -65,21 +81,31 @@ module.exports.run = async function({ api, event, getText }) {
     var msg = "", index = 1;
 
     try {
-		var spam = await api.getThreadList(100, null, ["OTHER"]) || [];
-		var pending = await api.getThreadList(100, null, ["PENDING"]) || [];
-	} catch (e) { return api.sendMessage(getText("cantGetPendingList"), threadID, messageID) }
+        // লিমিট কমিয়ে ২৫ দেওয়া হয়েছে যাতে ফেসবুক গ্রাফকিউএল টাইমআউট না করে
+		var spam = await api.getThreadList(25, null, ["OTHER"]) || [];
+		var pending = await api.getThreadList(25, null, ["PENDING"]) || [];
+	} catch (e) { 
+        console.error("Pending command error (getThreadList):", e);
+        return api.sendMessage(getText("cantGetPendingList"), threadID, messageID);
+    }
 
 	const list = [...spam, ...pending].filter(group => group.isSubscribed && group.isGroup);
 
-    for (const single of list) msg += `${index++}/ ${single.name}(${single.threadID})\n`;
+    for (const single of list) {
+        msg += `${index++}/ ${single.name || "Unnamed Group"} (${single.threadID})\n`;
+    }
 
-    if (list.length != 0) return api.sendMessage(getText("returnListPending", list.length, msg), threadID, (error, info) => {
-		global.client.handleReply.push({
-            name: commandName,
-            messageID: info.messageID,
-            author: event.senderID,
-            pending: list
-        })
-	}, messageID);
-    else return api.sendMessage(getText("returnListClean"), threadID, messageID);
-}
+    if (list.length != 0) {
+        return api.sendMessage(getText("returnListPending", list.length, msg), threadID, (error, info) => {
+            if (error) return console.error(error);
+            global.client.handleReply.push({
+                name: commandName,
+                messageID: info.messageID,
+                author: event.senderID,
+                pending: list
+            });
+        }, messageID);
+    } else {
+        return api.sendMessage(getText("returnListClean"), threadID, messageID);
+    }
+};
