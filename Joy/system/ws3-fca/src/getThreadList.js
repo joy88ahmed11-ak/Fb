@@ -1,7 +1,6 @@
 "use strict";
 
 const utils = require("../utils");
-// Fixed & Modernized with Timeout & Safe Tag Fallbacks
 
 function formatEventReminders(reminder) {
   return {
@@ -166,23 +165,13 @@ module.exports = function (defaultFuncs, api, ctx) {
       callback = tags;
       tags = ["INBOX"];
     }
-    if (
-      utils.getType(limit) !== "Number" ||
-      !Number.isInteger(limit) ||
-      limit <= 0
-    ) {
-      throw new Error("getThreadList: limit must be a positive integer");
-    }
-    if (
-      utils.getType(timestamp) !== "Null" &&
-      (utils.getType(timestamp) !== "Number" || !Number.isInteger(timestamp))
-    ) {
-      throw new Error("getThreadList: timestamp must be an integer or null");
-    }
+
     if (utils.getType(tags) === "String") {
       tags = [tags];
     }
-    if (utils.getType(tags) !== "Array" || tags.length === 0) {
+    
+    // PENDING ও OTHER ট্যাগের ফিল্টারিং হ্যান্ডলিং
+    if (!Array.isArray(tags) || tags.length === 0) {
       tags = ["INBOX"];
     }
 
@@ -214,7 +203,7 @@ module.exports = function (defaultFuncs, api, ctx) {
             limit: limit + (timestamp ? 1 : 0),
             before: timestamp,
             tags: tags,
-            includeDeliveryReceipts: false, // false করার ফলে রেসপন্স দ্রুত আসবে
+            includeDeliveryReceipts: false,
             includeSeqID: false,
           },
         },
@@ -229,15 +218,14 @@ module.exports = function (defaultFuncs, api, ctx) {
       "Referer": "https://www.facebook.com/"
     };
 
-    // রিকোয়েস্ট ঝুলিয়ে রাখা ঠেকাতে ৮ সেকেন্ডের কাস্টম টাইমআউট
+    // ৩ সেকেন্ডের হার্ড টাইমআউট সেফটি
     let isHandled = false;
     const requestTimeout = setTimeout(() => {
       if (!isHandled) {
         isHandled = true;
-        utils.warn("getThreadList", "Request timed out, returning empty list to avoid bot freezing.");
         return callback(null, []);
       }
-    }, 8000);
+    }, 3000);
 
     defaultFuncs
       .post("https://www.facebook.com/api/graphqlbatch/", ctx.jar, form, ctx.globalOptions, ctx, customHeader)
@@ -259,10 +247,6 @@ module.exports = function (defaultFuncs, api, ctx) {
           return callback(null, []);
         }
 
-        if (timestamp && resData[0] && resData[0].o0 && resData[0].o0.data && resData[0].o0.data.viewer && resData[0].o0.data.viewer.message_threads) {
-          resData[0].o0.data.viewer.message_threads.nodes.shift();
-        }
-
         const nodes = resData[0] && resData[0].o0 && resData[0].o0.data && resData[0].o0.data.viewer && resData[0].o0.data.viewer.message_threads
           ? resData[0].o0.data.viewer.message_threads.nodes 
           : [];
@@ -273,8 +257,7 @@ module.exports = function (defaultFuncs, api, ctx) {
         if (isHandled) return;
         clearTimeout(requestTimeout);
         isHandled = true;
-        utils.error("getThreadList", err);
-        return callback(null, []); // এরর এলেও ফ্রিজ না করে খালি অ্যারে পাঠাবে
+        return callback(null, []);
       });
 
     return returnPromise;
