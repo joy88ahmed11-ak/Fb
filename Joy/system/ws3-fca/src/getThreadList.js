@@ -1,7 +1,7 @@
 "use strict";
 
 const utils = require("../utils");
-// Fixed & Modernized by Joy
+// Fixed & Modernized with Timeout & Safe Tag Fallbacks
 
 function formatEventReminders(reminder) {
   return {
@@ -30,6 +30,8 @@ function formatEventReminders(reminder) {
 }
 
 function formatThreadGraphQLResponse(messageThread) {
+  if (!messageThread) return null;
+
   const threadID = messageThread.thread_key && (messageThread.thread_key.thread_fbid || messageThread.thread_key.other_user_id)
     ? (messageThread.thread_key.thread_fbid || messageThread.thread_key.other_user_id)
     : null;
@@ -53,28 +55,31 @@ function formatThreadGraphQLResponse(messageThread) {
 
   return {
     threadID: threadID,
-    threadName: messageThread.name,
+    threadName: messageThread.name || "",
     participantIDs: messageThread.all_participants && messageThread.all_participants.edges ? messageThread.all_participants.edges.map(
-      (d) => d.node.messaging_actor.id,
-    ) : [],
-    userInfo: messageThread.all_participants && messageThread.all_participants.edges ? messageThread.all_participants.edges.map((d) => ({
-      id: d.node.messaging_actor.id,
-      name: d.node.messaging_actor.name,
-      firstName: d.node.messaging_actor.short_name,
-      vanity: d.node.messaging_actor.username,
-      url: d.node.messaging_actor.url,
-      thumbSrc: d.node.messaging_actor.big_image_src ? d.node.messaging_actor.big_image_src.uri : null,
-      profileUrl: d.node.messaging_actor.big_image_src ? d.node.messaging_actor.big_image_src.uri : null,
-      gender: d.node.messaging_actor.gender,
-      type: d.node.messaging_actor.__typename,
-      isFriend: d.node.messaging_actor.is_viewer_friend,
-      isBirthday: !!d.node.messaging_actor.is_birthday,
-    })) : [],
-    unreadCount: messageThread.unread_count,
-    messageCount: messageThread.messages_count,
+      (d) => d.node && d.node.messaging_actor ? d.node.messaging_actor.id : null
+    ).filter(Boolean) : [],
+    userInfo: messageThread.all_participants && messageThread.all_participants.edges ? messageThread.all_participants.edges.map((d) => {
+      const actor = d.node ? d.node.messaging_actor : {};
+      return {
+        id: actor ? actor.id : null,
+        name: actor ? actor.name : "",
+        firstName: actor ? actor.short_name : "",
+        vanity: actor ? actor.username : "",
+        url: actor ? actor.url : "",
+        thumbSrc: actor && actor.big_image_src ? actor.big_image_src.uri : null,
+        profileUrl: actor && actor.big_image_src ? actor.big_image_src.uri : null,
+        gender: actor ? actor.gender : null,
+        type: actor ? actor.__typename : "",
+        isFriend: actor ? actor.is_viewer_friend : false,
+        isBirthday: !!(actor && actor.is_birthday),
+      };
+    }) : [],
+    unreadCount: messageThread.unread_count || 0,
+    messageCount: messageThread.messages_count || 0,
     timestamp: messageThread.updated_time_precise,
     muteUntil: messageThread.mute_until,
-    isGroup: messageThread.thread_type == "GROUP",
+    isGroup: messageThread.thread_type === "GROUP",
     isSubscribed: messageThread.is_viewer_subscribed,
     isArchived: messageThread.has_viewer_archived,
     folder: messageThread.folder,
@@ -102,7 +107,7 @@ function formatThreadGraphQLResponse(messageThread) {
             {},
           )
         : {},
-    adminIDs: messageThread.thread_admins,
+    adminIDs: messageThread.thread_admins || [],
     approvalMode: Boolean(messageThread.approval_mode),
     approvalQueue: messageThread.group_approval_queue && messageThread.group_approval_queue.nodes ? messageThread.group_approval_queue.nodes.map((a) => ({
       inviterID: a.inviter ? a.inviter.id : null,
@@ -116,14 +121,14 @@ function formatThreadGraphQLResponse(messageThread) {
     isPinProtected: messageThread.is_pin_protected,
     relatedPageThread: messageThread.related_page_thread,
 
-    name: messageThread.name,
+    name: messageThread.name || "",
     snippet: snippetText,
     snippetSender: snippetID,
     snippetAttachments: [],
     serverTimestamp: messageThread.updated_time_precise,
     imageSrc: messageThread.image ? messageThread.image.uri : null,
     isCanonicalUser: messageThread.is_canonical_neo_user,
-    isCanonical: messageThread.thread_type != "GROUP",
+    isCanonical: messageThread.thread_type !== "GROUP",
     recipientsLoadable: true,
     hasEmailParticipant: false,
     readOnly: false,
@@ -133,11 +138,11 @@ function formatThreadGraphQLResponse(messageThread) {
       : null,
     lastMessageType: "message",
     lastReadTimestamp: lastReadTimestamp,
-    threadType: messageThread.thread_type == "GROUP" ? 2 : 1,
+    threadType: messageThread.thread_type === "GROUP" ? 2 : 1,
 
     inviteLink: {
       enable: messageThread.joinable_mode
-        ? messageThread.joinable_mode.mode == 1
+        ? messageThread.joinable_mode.mode === 1
         : false,
       link: messageThread.joinable_mode
         ? messageThread.joinable_mode.link
@@ -148,7 +153,7 @@ function formatThreadGraphQLResponse(messageThread) {
 
 function formatThreadList(data) {
   if (!Array.isArray(data)) return [];
-  return data.map((t) => formatThreadGraphQLResponse(t));
+  return data.map((t) => formatThreadGraphQLResponse(t)).filter(Boolean);
 }
 
 module.exports = function (defaultFuncs, api, ctx) {
@@ -177,7 +182,7 @@ module.exports = function (defaultFuncs, api, ctx) {
     if (utils.getType(tags) === "String") {
       tags = [tags];
     }
-    if (utils.getType(tags) !== "Array") {
+    if (utils.getType(tags) !== "Array" || tags.length === 0) {
       tags = ["INBOX"];
     }
 
@@ -209,7 +214,7 @@ module.exports = function (defaultFuncs, api, ctx) {
             limit: limit + (timestamp ? 1 : 0),
             before: timestamp,
             tags: tags,
-            includeDeliveryReceipts: true,
+            includeDeliveryReceipts: false, // false করার ফলে রেসপন্স দ্রুত আসবে
             includeSeqID: false,
           },
         },
@@ -217,7 +222,6 @@ module.exports = function (defaultFuncs, api, ctx) {
       batch_name: "MessengerGraphQLThreadlistFetcher",
     };
 
-    // মডার্ন ব্রাউজার হেডার যুক্ত করা হয়েছে যাতে স্প্যাম ডিটেক্ট না করে
     const customHeader = {
       "Sec-Fetch-Site": "same-origin",
       "Sec-Fetch-Mode": "cors",
@@ -225,35 +229,52 @@ module.exports = function (defaultFuncs, api, ctx) {
       "Referer": "https://www.facebook.com/"
     };
 
+    // রিকোয়েস্ট ঝুলিয়ে রাখা ঠেকাতে ৮ সেকেন্ডের কাস্টম টাইমআউট
+    let isHandled = false;
+    const requestTimeout = setTimeout(() => {
+      if (!isHandled) {
+        isHandled = true;
+        utils.warn("getThreadList", "Request timed out, returning empty list to avoid bot freezing.");
+        return callback(null, []);
+      }
+    }, 8000);
+
     defaultFuncs
       .post("https://www.facebook.com/api/graphqlbatch/", ctx.jar, form, ctx.globalOptions, ctx, customHeader)
       .then(utils.parseAndCheckLogin(ctx, defaultFuncs))
       .then((resData) => {
+        if (isHandled) return;
+        clearTimeout(requestTimeout);
+        isHandled = true;
+
         if (!resData || !Array.isArray(resData)) {
-          throw new Error("Invalid response from Facebook GraphQL batch");
+          return callback(null, []);
         }
 
-        if (resData[resData.length - 1].error_results > 0) {
-          throw new Error(JSON.stringify(resData[0].o0.errors));
+        if (resData[resData.length - 1] && resData[resData.length - 1].error_results > 0) {
+          return callback(null, []);
         }
 
-        if (resData[resData.length - 1].successful_results === 0) {
-          throw new Error("getThreadList: there was no successful_results");
+        if (resData[resData.length - 1] && resData[resData.length - 1].successful_results === 0) {
+          return callback(null, []);
         }
 
-        if (timestamp && resData[0] && resData[0].o0 && resData[0].o0.data && resData[0].o0.data.viewer) {
+        if (timestamp && resData[0] && resData[0].o0 && resData[0].o0.data && resData[0].o0.data.viewer && resData[0].o0.data.viewer.message_threads) {
           resData[0].o0.data.viewer.message_threads.nodes.shift();
         }
 
-        const nodes = resData[0] && resData[0].o0 && resData[0].o0.data && resData[0].o0.data.viewer 
+        const nodes = resData[0] && resData[0].o0 && resData[0].o0.data && resData[0].o0.data.viewer && resData[0].o0.data.viewer.message_threads
           ? resData[0].o0.data.viewer.message_threads.nodes 
           : [];
 
         callback(null, formatThreadList(nodes));
       })
       .catch((err) => {
+        if (isHandled) return;
+        clearTimeout(requestTimeout);
+        isHandled = true;
         utils.error("getThreadList", err);
-        return callback(err);
+        return callback(null, []); // এরর এলেও ফ্রিজ না করে খালি অ্যারে পাঠাবে
       });
 
     return returnPromise;
